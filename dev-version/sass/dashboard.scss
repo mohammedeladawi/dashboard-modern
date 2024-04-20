@@ -1,2 +1,5 @@
-@use "./helpers/variables";
-@use "./helpers/global";
+@import "./helpers/variables";
+@import "./helpers/global";
+@import "./components/buttons";
+@import "./layouts/sidebar";
+@import "./layouts/header";
