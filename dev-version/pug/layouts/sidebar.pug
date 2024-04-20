@@ -1,39 +1,26 @@
 // Start sidebar
 
-.sidebar
-    h1(class="sidebar__logo") Template
-    ul(class="sidebar_nav_links") 
-        li
-            a(href="index.html")
-                i(class="fa-solid fa-chart-bar fa-fw")
-                span Dashboard
-        li
-            a(href="settings.html")
-                i(class="fa-solid fa-gear fa-fw")
-                span Settings
-        li
-            a(href="profile.html")
-                i(class="fa-regular fa-user fa-fw")
-                span Profile
-        li
-            a(href="projects.html")
-                i(class="fa-solid fa-diagram-project fa-fw")
-                span Projects
-        li
-            a(href="courses.html")
-                i(class="fa-solid fa-graduation-cap fa-fw")
-                span Courses
-        li
-            a(href="friends.html")
-                i(class="fa-regular fa-circle-user fa-fw")
-                span Friends
-        li
-            a(href="files.html")
-                i(class="fa-regular fa-file fa-fw")
-                span Files
-        li
-            a(href="plans.html")
-                i(class="fa-regular fa-credit-card fa-fw")
-                span Plans
+.sidebar       
+    h1.sidebar__logo Template
+    ul.sidebar_nav_links
+        mixin sidebarLinks(links)
+            each link in links
+                li
+                    a(href=link.href)
+                        i(class=link.icon)
+                        span= link.label
+
+        //- Include the mixin with the data
+        +sidebarLinks([
+            { href: "index.html", icon: "fa-solid fa-chart-bar fa-fw", label: "Dashboard" },
+            { href: "settings.html", icon: "fa-solid fa-gear fa-fw", label: "Settings" },
+            { href: "profile.html", icon: "fa-regular fa-user fa-fw", label: "Profile" },
+            { href: "projects.html", icon: "fa-solid fa-diagram-project fa-fw", label: "Projects" },
+            { href: "courses.html", icon: "fa-solid fa-graduation-cap fa-fw", label: "Courses" },
+            { href: "friends.html", icon: "fa-regular fa-circle-user fa-fw", label: "Friends" },
+            { href: "files.html", icon: "fa-regular fa-file fa-fw", label: "Files" },
+            { href: "plans.html", icon: "fa-regular fa-credit-card fa-fw", label: "Plans" }
+        ])
+
                 
 // End sidebar
