@@ -18,7 +18,7 @@ gulp.task("sassCompile", async function () {
 
   return gulp
     .src("dev-version/sass/dashboard.scss")
-    .pipe(sass({ outputStyle: "compressed" }))
+    .pipe(sass())
     .on("error", console.error.bind(console)) // Error handling
     .pipe(autoprefixer.default()) // Use default export from dynamic import
     .pipe(gulp.dest("./dist/css"));

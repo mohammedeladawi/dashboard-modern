@@ -1,7 +1,10 @@
+include pug/helpers/variables.pug
 doctype 
+
 html(lang="en")
     head 
         include pug/includes/head-tags.pug
-    body 
-        sidebar 
+        title Friends
+    body
+        div(class=pageClassName)
             include pug/layouts/sidebar.pug
