@@ -1,2 +1,15 @@
 // Sidebar functionality
-const navLink = document.querySelectorAll(".sidebar .sidebar_nav_links a");
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".sidebar .sidebar_nav_links a");
+
+  // Get the full URL of the current page
+  const url = window.location.href;
+
+  // Extract the filename from the URL
+  const filename = url.substring(url.lastIndexOf("/") + 1);
+
+  // Add class active to the nav link of the opened page
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href") === filename) link.classList.add("active");
+  });
+});
