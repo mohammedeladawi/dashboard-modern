@@ -42,7 +42,7 @@ ul {
 }
 
 /* End global rules */
-/* Start sidebar */
+/* Sidebar */
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -50,11 +50,13 @@ ul {
   box-shadow: 0 0 15px #ddd;
   position: fixed;
   background-color: white;
+  /* Sidebar Log */
+  /* Sidebar Navigation Links */
 }
 .sidebar > .sidebar__logo {
+  text-align: center;
   margin-bottom: 50px;
   font-size: 21px;
-  text-align: center;
   position: relative;
 }
 .sidebar > .sidebar__logo::before {
@@ -82,4 +84,17 @@ ul {
   margin-left: 8px;
 }
 
-/* End sidebar */
+/* Responsive Layout */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 70px;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .sidebar > .sidebar__logo {
+    font-size: 12px;
+  }
+  .sidebar .sidebar_nav_links a span {
+    display: none;
+  }
+}

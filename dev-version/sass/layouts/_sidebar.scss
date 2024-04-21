@@ -1,5 +1,4 @@
-/* Start sidebar */
-
+/* Sidebar */
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -7,10 +6,12 @@
   box-shadow: 0 0 15px #ddd;
   position: fixed;
   background-color: white;
+
+  /* Sidebar Log */
   > .sidebar__logo {
+    text-align: center;
     margin-bottom: 50px;
     font-size: 21px;
-    text-align: center;
     position: relative;
 
     &::before {
@@ -24,6 +25,7 @@
     }
   }
 
+  /* Sidebar Navigation Links */
   .sidebar_nav_links {
     a {
       display: block;
@@ -46,4 +48,23 @@
   }
 }
 
-/* End sidebar */
+/* Responsive Layout */
+@media ($sm) {
+  .sidebar {
+    width: 70px;
+    text-align: center;
+    padding: 20px 0;
+
+    > .sidebar__logo {
+      font-size: 12px;
+    }
+
+    .sidebar_nav_links {
+      a {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
