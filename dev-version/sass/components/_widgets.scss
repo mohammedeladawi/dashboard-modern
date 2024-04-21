@@ -1,4 +1,8 @@
 .widget {
+  span {
+    color: $greyColor;
+    font-size: 14px;
+  }
   background-color: white;
   border-radius: 6px;
   overflow: hidden;

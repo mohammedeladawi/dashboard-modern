@@ -44,7 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const filename = url.substring(url.lastIndexOf("/") + 1);
 
   // Add class active to the nav link of the opened page
-  navLinks.forEach((link) => {
-    if (link.getAttribute("href") === filename) link.classList.add("active");
-  });
+  if (!filename) {
+    navLinks[0].classList.add("active");
+  } else {
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === filename) link.classList.add("active");
+    });
+  }
 });

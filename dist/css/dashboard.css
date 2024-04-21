@@ -21,7 +21,7 @@ ul {
   outline: none;
 }
 
-button {
+button, input, .draft--widget .draft__content textarea, textarea {
   border: none;
   outline: none;
 }
@@ -55,7 +55,7 @@ button {
 /* End global rules */
 .btn {
   width: 60px;
-  height: 22px;
+  height: 24px;
   font-size: 13px;
   border-radius: 5px;
   display: flex;
@@ -103,6 +103,10 @@ button {
   background-color: white;
   border-radius: 6px;
   overflow: hidden;
+}
+.widget span {
+  color: #888;
+  font-size: 14px;
 }
 
 /* Sidebar */
@@ -185,20 +189,20 @@ button {
   top: 11px;
   color: #888;
 }
-.header .header__search input[type=search] {
+.header .header__search input[type=search], .header .header__search .draft--widget .draft__content textarea[type=search], .draft--widget .draft__content .header .header__search textarea[type=search] {
   width: 180px;
   padding: 10px 0 10px 30px;
   border-radius: 8px;
   border: 1px solid #888;
   transition-duration: 0.3s;
 }
-.header .header__search input[type=search]:focus {
+.header .header__search input[type=search]:focus, .header .header__search .draft--widget .draft__content textarea[type=search]:focus, .draft--widget .draft__content .header .header__search textarea[type=search]:focus {
   width: 200px;
 }
-.header .header__search input[type=search]:focus::-moz-placeholder {
+.header .header__search input[type=search]:focus::-moz-placeholder, .header .header__search .draft--widget .draft__content textarea[type=search]:focus::-moz-placeholder, .draft--widget .draft__content .header .header__search textarea[type=search]:focus::-moz-placeholder {
   visibility: hidden;
 }
-.header .header__search input[type=search]:focus::placeholder {
+.header .header__search input[type=search]:focus::placeholder, .header .header__search .draft--widget .draft__content textarea[type=search]:focus::placeholder, .draft--widget .draft__content .header .header__search textarea[type=search]:focus::placeholder {
   visibility: hidden;
 }
 .header .header__icons {
@@ -253,55 +257,52 @@ button {
 }
 
 /* Index */
-.welcome__widgets {
+.dashboard__widgets {
   display: grid;
   gap: 10px;
+  /* Welcome Widget */
 }
 @media (max-width: 767px) {
-  .welcome__widgets {
+  .dashboard__widgets {
     grid-template-columns: minmax(200px, 1fr);
   }
 }
 @media (min-width: 768px) {
-  .welcome__widgets {
+  .dashboard__widgets {
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   }
 }
-.welcome__widgets .welcome--widget {
+.dashboard__widgets .welcome--widget {
   /* Header */
   /* Content */
   /* Footer */
 }
-.welcome__widgets .welcome--widget span {
-  color: #888;
-  font-size: 14px;
-}
-.welcome__widgets .welcome--widget .welcome__header {
+.dashboard__widgets .welcome--widget .welcome__header {
   display: flex;
   padding: 20px;
   background-color: #eee;
 }
 @media (max-width: 767px) {
-  .welcome__widgets .welcome--widget .welcome__header {
+  .dashboard__widgets .welcome--widget .welcome__header {
     height: 130px;
   }
 }
-.welcome__widgets .welcome--widget .welcome__header .welcome_header_text {
+.dashboard__widgets .welcome--widget .welcome__header .welcome_header_text {
   flex: 1;
 }
-.welcome__widgets .welcome--widget .welcome__header .welcome_header_text h3 {
+.dashboard__widgets .welcome--widget .welcome__header .welcome_header_text h3 {
   font-size: 22px;
   margin-bottom: 6px;
 }
-.welcome__widgets .welcome--widget .welcome__header .welcome_header_image img {
+.dashboard__widgets .welcome--widget .welcome__header .welcome_header_image img {
   width: 200px;
 }
 @media (max-width: 767px) {
-  .welcome__widgets .welcome--widget .welcome__header .welcome_header_image {
+  .dashboard__widgets .welcome--widget .welcome__header .welcome_header_image {
     display: none;
   }
 }
-.welcome__widgets .welcome--widget .welcome__profile {
+.dashboard__widgets .welcome--widget .welcome__profile {
   width: 70px;
   padding: 6px;
   margin-top: -35px;
@@ -310,10 +311,10 @@ button {
   border-radius: 50%;
   box-shadow: 0 0 12px #ddd;
 }
-.welcome__widgets .welcome--widget .welcome__profile img {
+.dashboard__widgets .welcome--widget .welcome__profile img {
   width: 100%;
 }
-.welcome__widgets .welcome--widget .welcome__content {
+.dashboard__widgets .welcome--widget .welcome__content {
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -321,16 +322,49 @@ button {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
-.welcome__widgets .welcome--widget .welcome__content div {
+.dashboard__widgets .welcome--widget .welcome__content div {
   text-align: center;
 }
-.welcome__widgets .welcome--widget .welcome__content div p {
+.dashboard__widgets .welcome--widget .welcome__content div p {
   margin-bottom: 10px;
 }
-.welcome__widgets .welcome--widget .welcome__footer {
+.dashboard__widgets .welcome--widget .welcome__footer {
   padding: 20px;
   text-align: end;
 }
-.welcome__widgets .welcome--widget .welcome__footer .btn {
+.dashboard__widgets .welcome--widget .welcome__footer .btn {
+  margin-left: auto;
+}
+
+/* Draft Widget*/
+.draft--widget {
+  padding: 20px;
+  /* Header */
+  /* Content */
+  /* Footer */
+}
+.draft--widget .draft__header {
+  margin-bottom: 20px;
+}
+.draft--widget .draft__header h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.draft--widget .draft__header span {
+  color: #888;
+}
+.draft--widget .draft__content input, .draft--widget .draft__content textarea {
+  display: block;
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.draft--widget .draft__content textarea {
+  resize: none;
+  height: 160px;
+}
+.draft--widget .draft__footer .btn {
   margin-left: auto;
 }

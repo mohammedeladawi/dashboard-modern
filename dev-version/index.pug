@@ -14,7 +14,7 @@ html(lang="en")
                 .main__content 
                     .content__title 
                         h2=pageTitle
-                    .welcome__widgets
+                    .dashboard__widgets
                         // Start Welcome Widget
                         .widget.welcome--widget
                             .welcome__header
@@ -38,4 +38,15 @@ html(lang="en")
                             .welcome__footer
                                 button.btn.btn--primary Profile
                         // End Welcome Widget
+                        // Start Draft Widget
+                        .widget.draft--widget
+                            .draft__header
+                                h3 Quick Draft
+                                span Write A Draft For Your Ideas
+                            .draft__content
+                                input(type="text" placeholder="Title")
+                                textarea(name="thoughts", cols="30", rows="10" placeholder="Your Thoughts")
+                            .draft__footer
+                                button.btn.btn--primary Save
+                        // End Draft Widget
 
