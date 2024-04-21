@@ -1,8 +1,16 @@
-// Variables
+// Colors
 $blueColor: #0075ff;
 $blueAltColor: #0d69d5;
 $orangeColor: #f59e0b;
 $greenColor: #22c55e;
 $redColor: #f44336;
 $greyColor: #888;
+
+// Transiton
 $mainTransitionDuration: 0.3s;
+
+// Breakpoints
+$sm: "max-width: 767px";
+$md: "min-width: 768px";
+$lg: "min-width: 992px";
+$xl: "min-width: 1200px";
