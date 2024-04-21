@@ -1,0 +1,94 @@
+/* Header */
+.header {
+  background-color: white;
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  /* Search Bar */
+  .header__search {
+    position: relative;
+    overflow: hidden;
+
+    i {
+      position: absolute;
+      left: 7px;
+      top: 11px;
+      color: $greyColor;
+    }
+
+    input[type="search"] {
+      width: 180px;
+      padding: 10px 0 10px 30px;
+      border-radius: 8px;
+      border: 1px solid $greyColor;
+      transition-duration: $mainTransitionDuration;
+
+      &:focus {
+        width: 200px;
+        &::placeholder {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  .header__icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    /* Notification Icon */
+    .icon--notifications {
+      margin-right: 20px;
+      cursor: pointer;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: $redColor;
+        border-radius: 50%;
+        right: -5px;
+        top: -5px;
+      }
+    }
+
+    /* Profile Image */
+    .icon--profile {
+      width: 40px;
+      cursor: pointer;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+
+  /* Icons Content */
+  .header_icons_content {
+    position: absolute;
+    right: 0;
+    top: 100%;
+
+    .content {
+      width: 400px;
+      height: 100px;
+      padding: 20px;
+      background-color: white;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      z-index: 100;
+
+      &.content--show {
+        display: flex;
+      }
+    }
+  }
+}
