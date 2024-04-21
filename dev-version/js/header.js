@@ -1,3 +1,4 @@
+// Header functionality
 document.addEventListener("DOMContentLoaded", function () {
   // Notification icon
   const notificationIcon = document.querySelector(".icon--notifications");
