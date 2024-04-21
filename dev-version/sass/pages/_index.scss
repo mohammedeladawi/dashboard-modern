@@ -1,0 +1,79 @@
+/* Index */
+.welcome__widgets {
+  display: grid;
+  @media ($sm) {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+  @media ($md) {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  }
+  gap: 10px;
+
+  .welcome--widget {
+    span {
+      color: $greyColor;
+      font-size: 14px;
+    }
+    /* Header */
+    .welcome__header {
+      display: flex;
+      padding: 20px;
+      background-color: #eee;
+      @media ($sm) {
+        height: 130px;
+      }
+      .welcome_header_text {
+        flex: 1;
+        h3 {
+          font-size: 22px;
+          margin-bottom: 6px;
+        }
+      }
+      .welcome_header_image {
+        img {
+          width: 200px;
+        }
+        @media ($sm) {
+          display: none;
+        }
+      }
+    }
+    .welcome__profile {
+      width: 70px;
+      padding: 6px;
+      margin-top: -35px;
+      margin-left: 20px;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #ddd;
+      img {
+        width: 100%;
+      }
+    }
+
+    /* Content */
+    .welcome__content {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      margin-top: 10px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      div {
+        p {
+          margin-bottom: 10px;
+        }
+        text-align: center;
+      }
+    }
+
+    /* Footer */
+    .welcome__footer {
+      padding: 20px;
+      text-align: end;
+      .btn {
+        margin-left: auto;
+      }
+    }
+  }
+}

@@ -48,8 +48,63 @@ button {
 .page .content {
   flex: 1;
 }
+.page .content .main__content {
+  padding: 20px;
+}
 
 /* End global rules */
+.btn {
+  width: 60px;
+  height: 22px;
+  font-size: 13px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn--primary {
+  color: white;
+  background-color: #0075ff;
+}
+.btn--primary:hover {
+  background-color: #0d69d5;
+}
+
+.content__title {
+  margin-bottom: 40px;
+}
+.content__title h2 {
+  font-size: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.content__title h2::before {
+  content: "";
+  width: 40px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+.content__title h2::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  left: 40px;
+  top: 100%;
+}
+
+.widget {
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 /* Sidebar */
 .sidebar {
   width: 250px;
@@ -180,6 +235,7 @@ button {
   right: 0;
   top: 100%;
   box-shadow: 0 0 15px #ddd;
+  z-index: 100;
 }
 .header .header_icons_content .content {
   width: 400px;
@@ -191,8 +247,90 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  z-index: 100;
 }
 .header .header_icons_content .content.content--show {
   display: flex;
+}
+
+/* Index */
+.welcome__widgets {
+  display: grid;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .welcome__widgets {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .welcome__widgets {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  }
+}
+.welcome__widgets .welcome--widget {
+  /* Header */
+  /* Content */
+  /* Footer */
+}
+.welcome__widgets .welcome--widget span {
+  color: #888;
+  font-size: 14px;
+}
+.welcome__widgets .welcome--widget .welcome__header {
+  display: flex;
+  padding: 20px;
+  background-color: #eee;
+}
+@media (max-width: 767px) {
+  .welcome__widgets .welcome--widget .welcome__header {
+    height: 130px;
+  }
+}
+.welcome__widgets .welcome--widget .welcome__header .welcome_header_text {
+  flex: 1;
+}
+.welcome__widgets .welcome--widget .welcome__header .welcome_header_text h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.welcome__widgets .welcome--widget .welcome__header .welcome_header_image img {
+  width: 200px;
+}
+@media (max-width: 767px) {
+  .welcome__widgets .welcome--widget .welcome__header .welcome_header_image {
+    display: none;
+  }
+}
+.welcome__widgets .welcome--widget .welcome__profile {
+  width: 70px;
+  padding: 6px;
+  margin-top: -35px;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ddd;
+}
+.welcome__widgets .welcome--widget .welcome__profile img {
+  width: 100%;
+}
+.welcome__widgets .welcome--widget .welcome__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.welcome__widgets .welcome--widget .welcome__content div {
+  text-align: center;
+}
+.welcome__widgets .welcome--widget .welcome__content div p {
+  margin-bottom: 10px;
+}
+.welcome__widgets .welcome--widget .welcome__footer {
+  padding: 20px;
+  text-align: end;
+}
+.welcome__widgets .welcome--widget .welcome__footer .btn {
+  margin-left: auto;
 }

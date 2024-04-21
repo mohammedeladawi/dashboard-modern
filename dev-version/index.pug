@@ -1,12 +1,41 @@
 include pug/helpers/variables.pug
+- pageTitle = 'Dashboard'
 doctype 
 
 html(lang="en")
     head 
         include pug/includes/head-tags.pug
-        title Dashboard
+        title=pageTitle
     body
         div(class=pageClassName)
             include pug/layouts/sidebar.pug
             .content
                 include pug/layouts/header.pug
+                .main__content 
+                    .content__title 
+                        h2=pageTitle
+                    .welcome__widgets
+                        // Start Welcome Widget
+                        .widget.welcome--widget
+                            .welcome__header
+                                .welcome_header_text
+                                    h3 Welcome 
+                                    span Mohammed
+                                .welcome_header_image
+                                    img(src="imgs/welcome.png")
+                            .welcome__profile
+                                img(src="imgs/avatar.png")
+                            .welcome__content
+                                div 
+                                    p Mohammed Eladawi
+                                    span Developer
+                                div
+                                    p 80
+                                    span Projects
+                                div
+                                    p $8500
+                                    span Earned
+                            .welcome__footer
+                                button.btn.btn--primary Profile
+                        // End Welcome Widget
+

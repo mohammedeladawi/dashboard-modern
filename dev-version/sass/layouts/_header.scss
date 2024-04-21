@@ -75,6 +75,7 @@
     right: 0;
     top: 100%;
     box-shadow: 0 0 15px #ddd;
+    z-index: 100;
     .content {
       width: 400px;
       max-width: 100%;
@@ -85,8 +86,7 @@
       justify-content: center;
       align-items: center;
       border-radius: 10px;
-      z-index: 100;
-
+      
       &.content--show {
         display: flex;
       }

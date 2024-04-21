@@ -1,0 +1,18 @@
+.btn {
+  width: 60px;
+  height: 22px;
+  font-size: 13px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn--primary {
+  color: white;
+  background-color: $blueColor;
+  &:hover {
+    background-color: $blueAltColor;
+  }
+}
