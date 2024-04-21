@@ -179,9 +179,11 @@ button {
   position: absolute;
   right: 0;
   top: 100%;
+  box-shadow: 0 0 15px #ddd;
 }
 .header .header_icons_content .content {
   width: 400px;
+  max-width: 100%;
   height: 100px;
   padding: 20px;
   background-color: white;
