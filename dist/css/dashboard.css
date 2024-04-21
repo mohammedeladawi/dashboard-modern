@@ -45,6 +45,9 @@ button {
   background-color: #f1f5f9;
   min-height: 100vh;
 }
+.page .content {
+  flex: 1;
+}
 
 /* End global rules */
 /* Sidebar */
@@ -83,8 +86,7 @@ button {
   border-radius: 6px;
   transition-duration: 0.3s;
 }
-.sidebar .sidebar_nav_links a.active,
-.sidebar .sidebar_nav_links a:hover {
+.sidebar .sidebar_nav_links a.active, .sidebar .sidebar_nav_links a:hover {
   background-color: #f6f6f6;
 }
 .sidebar .sidebar_nav_links a span {
@@ -128,20 +130,20 @@ button {
   top: 11px;
   color: #888;
 }
-.header .header__search input[type="search"] {
+.header .header__search input[type=search] {
   width: 180px;
   padding: 10px 0 10px 30px;
   border-radius: 8px;
   border: 1px solid #888;
   transition-duration: 0.3s;
 }
-.header .header__search input[type="search"]:focus {
+.header .header__search input[type=search]:focus {
   width: 200px;
 }
-.header .header__search input[type="search"]:focus::-moz-placeholder {
+.header .header__search input[type=search]:focus::-moz-placeholder {
   visibility: hidden;
 }
-.header .header__search input[type="search"]:focus::placeholder {
+.header .header__search input[type=search]:focus::placeholder {
   visibility: hidden;
 }
 .header .header__icons {
