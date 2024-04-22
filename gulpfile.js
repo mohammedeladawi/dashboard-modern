@@ -39,3 +39,6 @@ gulp.task("watch", async function () {
   gulp.watch("./dev-version/sass/**/*.scss", gulp.series("sassCompile"));
   gulp.watch("./dev-version/js/*js", gulp.series("jsConcat"));
 });
+
+// Default (inevitable name)
+gulp.task("default", gulp.series("watch"));
