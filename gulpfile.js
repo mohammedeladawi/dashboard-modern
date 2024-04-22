@@ -4,7 +4,7 @@ const sass = require("gulp-sass")(require("sass"));
 const concat = require("gulp-concat");
 
 // PugJs files
-gulp.task("pugCompile", function () {
+gulp.task("pugCompile", async function () {
   return gulp
     .src("dev-version/*.pug")
     .pipe(pug({ pretty: true }))
