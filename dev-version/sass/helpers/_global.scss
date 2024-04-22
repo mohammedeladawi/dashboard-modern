@@ -21,7 +21,9 @@ ul {
   outline: none;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   border: none;
   outline: none;
 }
@@ -50,6 +52,10 @@ button, input, textarea {
 
   .content {
     flex: 1;
+    margin-left: 250px;
+    @media ($sm) {
+      margin-left: 70px;
+    }
 
     .main__content {
       padding: 20px;

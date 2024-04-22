@@ -15,5 +15,18 @@ $md: "min-width: 768px";
 $lg: "min-width: 992px";
 $xl: "min-width: 1200px";
 
-
-// Target Widget
+// Define colors
+$targetTypes: (
+  money: (
+    color: rgb(0, 117, 255),
+    width: 80%,
+  ),
+  projects: (
+    color: rgb(245, 158, 11),
+    width: 50%,
+  ),
+  team: (
+    color: rgb(34, 197, 94),
+    width: 75%,
+  ),
+);

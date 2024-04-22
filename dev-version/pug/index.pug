@@ -51,19 +51,27 @@ html(lang="en")
                                 button.btn.btn--primary Save
                         // End Draft Widget
                         // Start Yearly Target Widget
-                        .widget.target--widget 
+                        .widget.target--widget
                             .widget__header.widget__header--target.target__header
-                                h3 Yearly Target 
-                                span Targets Of The Year
+                                h3 Yearly Target
+                                span Targets Of the Year
                             .target__content
                                 each target in targetFeatures
-                                    div(class='content_details.content_details--' + target.name)
-                                        div(class= 'target__icon.target__icon--' + target.color)
+                                    //- Construct class names dynamically
+                                    - const targetClass = `content_details content_details--${target.name} ${target.color}`
+                                    div(class=targetClass)
+                                        //- Render the target icon
+                                        .target__icon(class=`target__icon target__icon--${target.color}`)
                                             i(class=target.iconClass)
-                                        div.target__info
-                                            span #{target.name[0].toUpperCase() + target.name.slice(1)}
+                                        //- Display target information
+                                        .target__info
+                                            span #{target.name.charAt(0).toUpperCase() + target.name.slice(1)}
                                             p=target.count
-                                            .progress 
-                                                span.reached
-                        //  Yearly Target Widget
+                                            .progress__container
+                                                //- Display progress
+                                                span.reached(data-progress=`${target.progress}`)
+                        // End Yearly Target Widget
+
+
+
 

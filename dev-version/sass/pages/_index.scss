@@ -1,3 +1,11 @@
+// Placeholder Selector
+%btn-margin {
+  margin-left: auto;
+  @media ($sm) {
+    margin-right: auto;
+  }
+}
+
 /* Index */
 .dashboard__widgets {
   display: grid;
@@ -48,19 +56,30 @@
       img {
         width: 100%;
       }
+      @media ($sm) {
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     /* Content */
     .welcome__content {
-      display: flex;
-      justify-content: space-between;
+      @media ($md) {
+        display: flex;
+        justify-content: space-between;
+      }
       padding: 20px;
       margin-top: 10px;
       border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
       div {
+        @media ($sm) {
+          margin-bottom: 20px;
+        }
         p {
-          margin-bottom: 10px;
+          @media ($md) {
+            margin-bottom: 10px;
+          }
         }
         text-align: center;
       }
@@ -71,7 +90,7 @@
       padding: 20px;
       text-align: end;
       .btn {
-        margin-left: auto;
+        @extend %btn-margin;
       }
     }
   }
@@ -107,7 +126,93 @@
   /* Footer */
   .draft__footer {
     .btn {
-      margin-left: auto;
+      @extend %btn-margin;
+    }
+  }
+}
+
+/* Yearly Target Widget */
+.target--widget {
+  /* Elements */
+  .widget__header--target {
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .target__content {
+    .content_details {
+      display: flex;
+      gap: 20px;
+      margin: 10px;
+
+      .target__icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .target__info {
+        flex: 1;
+        p {
+          margin-top: 5px;
+          margin-bottom: 15px;
+          font-weight: bold;
+        }
+      }
+
+      .progress__container {
+        width: 100%;
+        height: 5px;
+
+        .reached {
+          display: block;
+          height: 5px;
+          position: relative;
+
+          &::before {
+            content: attr(data-progress);
+            width: 30px;
+            height: 20px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: calc(100% + 10px);
+            font-size: 12px;
+            border-radius: 6px;
+            right: -15px;
+          }
+        }
+      }
+    }
+
+    /* Modifiers */
+    @each $type, $details in $targetTypes {
+      $color: map-get($details, color);
+      $width: map-get($details, width);
+
+      .content_details--#{$type} {
+        .target__icon {
+          background-color: rgba($color, 0.2);
+          i {
+            color: $color;
+          }
+        }
+        .progress__container {
+          background-color: rgba($color, 0.2);
+          .reached {
+            background-color: $color;
+            width: $width;
+            &::before {
+              background-color: $color;
+            }
+          }
+        }
+      }
     }
   }
 }
