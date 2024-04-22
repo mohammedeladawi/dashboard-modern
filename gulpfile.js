@@ -2,11 +2,13 @@ const gulp = require("gulp");
 const pug = require("gulp-pug");
 const sass = require("gulp-sass")(require("sass"));
 const concat = require("gulp-concat");
+const plumber = require("gulp-plumber"); // This is used to prevent gulp from stopping on errors
 
 // PugJs files
 gulp.task("pugCompile", async function () {
   return gulp
-    .src("dev-version/*.pug")
+    .src("dev-version/pug/*.pug")
+    .pipe(plumber()) // Prevent Gulp from stopping on errors
     .pipe(pug({ pretty: true }))
     .on("error", console.error.bind(console)) // Error handling (error event)
     .pipe(gulp.dest("./dist"));
@@ -19,8 +21,9 @@ gulp.task("sassCompile", async function () {
 
   return gulp
     .src("dev-version/sass/dashboard.scss")
+    .pipe(plumber()) // Prevent Gulp from stopping on errors
     .pipe(sass())
-    .on("error", console.error.bind(console)) // Error handling
+    .on("error", console.error.bind(console)) // Error handling (error event)
     .pipe(autoprefixer.default()) // Use default export from dynamic import
     .pipe(gulp.dest("./dist/css"));
 });
@@ -28,6 +31,7 @@ gulp.task("sassCompile", async function () {
 gulp.task("jsConcat", async function () {
   return gulp
     .src("./dev-version/js/*.js")
+    .pipe(plumber()) // Prevent Gulp from stopping on errors
     .pipe(concat("main.js"))
     .on("error", console.error.bind(console)) // Error handling
     .pipe(gulp.dest("./dist/js"));

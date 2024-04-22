@@ -1,17 +1,17 @@
-include pug/helpers/variables.pug
+include helpers/variables.pug
 - pageTitle = 'Dashboard'
 
 doctype 
 
 html(lang="en")
     head 
-        include pug/includes/head-tags.pug
+        include includes/head-tags.pug
         title=pageTitle
     body
         div(class=pageClassName)
-            include pug/layouts/sidebar.pug
+            include layouts/sidebar.pug
             .content
-                include pug/layouts/header.pug
+                include layouts/header.pug
                 .main__content 
                     .content__title 
                         h2=pageTitle

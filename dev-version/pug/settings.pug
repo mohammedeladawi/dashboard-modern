@@ -1,0 +1,13 @@
+include helpers/variables.pug
+- pageTitle = "Settings"
+doctype 
+
+html(lang="en")
+    head 
+        include includes/head-tags.pug
+        title #{pageTitle}
+    body
+        div(class=pageClassName)
+            include layouts/sidebar.pug
+            .content
+                include layouts/header.pug
