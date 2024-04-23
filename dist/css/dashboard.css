@@ -111,11 +111,6 @@ textarea {
   border-radius: 6px;
   overflow: hidden;
 }
-@media (max-width: 767px) {
-  .widget {
-    text-align: center;
-  }
-}
 .widget span {
   color: #888;
   font-size: 14px;
@@ -270,6 +265,20 @@ textarea {
 }
 .header .content.content--show {
   display: flex;
+}
+
+.task:not(:first-child), .new:not(:first-child) {
+  padding-top: 20px;
+}
+.task:not(:last-child), .new:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .draft--widget, .dashboard__widgets .welcome--widget {
+    text-align: center;
+  }
 }
 
 /* Index */
@@ -541,13 +550,6 @@ textarea {
 }
 
 /* Latest News Widget */
-.new:not(:first-child) {
-  padding-top: 20px;
-}
-.new:not(:last-child) {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
-}
 @media (max-width: 767px) {
   .new {
     text-align: center;
@@ -585,4 +587,27 @@ textarea {
   .new .new__time {
     margin-top: 15px;
   }
+}
+
+/* Latest Tasks Widget */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Deleted Task */
+}
+.task .delete:hover {
+  color: #f44336;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.task.deleted {
+  opacity: 0.3;
+}
+.task.deleted p,
+.task.deleted span {
+  text-decoration: line-through;
+}
+.task.deleted .delete {
+  display: none;
 }

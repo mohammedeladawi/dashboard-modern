@@ -1,10 +1,20 @@
 // Placeholder Selector
-// %btn-margin {
-//   margin-left: auto;
-//   @media ($sm) {
-//     margin-right: auto;
-//   }
-// }
+%new-task {
+  &:not(:first-child) {
+    padding-top: 20px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+}
+
+%mobile-center {
+  @media ($sm) {
+    text-align: center;
+  }
+}
 
 /* Index */
 .dashboard__widgets {
@@ -20,6 +30,7 @@
   /* Welcome Widget */
   .welcome--widget {
     padding: 0;
+    @extend %mobile-center;
     /* Header */
     .widget__header--welcome {
       display: flex;
@@ -98,6 +109,8 @@
 /* Draft Widget*/
 .draft--widget {
   padding: 20px;
+  @extend %mobile-center;
+
   /* Header */
   .widget__header--draft {
     h3 {
@@ -254,14 +267,7 @@
 
 /* Latest News Widget */
 .new {
-  &:not(:first-child) {
-    padding-top: 20px;
-  }
-
-  &:not(:last-child) {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-  }
+  @extend %new-task;
 
   @media ($sm) {
     text-align: center;
@@ -299,6 +305,33 @@
     }
     @media ($sm) {
       margin-top: 15px;
+    }
+  }
+}
+
+/* Latest Tasks Widget */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend %new-task;
+
+  .delete {
+    &:hover {
+      color: $redColor;
+      cursor: pointer;
+      transition-duration: $mainTransitionDuration;
+    }
+  }
+  /* Deleted Task */
+  &.deleted {
+    opacity: 0.3;
+    p,
+    span {
+      text-decoration: line-through;
+    }
+    .delete {
+      display: none;
     }
   }
 }

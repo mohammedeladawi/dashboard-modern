@@ -1,8 +1,5 @@
 .widget {
   padding: 20px;
-  @media ($sm) {
-    text-align: center;
-  }
   span {
     color: $greyColor;
     font-size: 14px;

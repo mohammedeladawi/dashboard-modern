@@ -90,16 +90,26 @@ html(lang="en")
                             .widget__content 
                                 each latest in latestNews
                                     .new
-                                            .new__img 
-                                                img(src=latest.srcImg)
-                                            .new__info 
-                                                p=latest.title
-                                                span=latest.details
-                                            .new__time
-                                                span.btn.btn--time=latest.since
+                                        .new__img 
+                                            img(src=latest.srcImg)
+                                        .new__info 
+                                            p=latest.title
+                                            span=latest.details
+                                        .new__time
+                                            span.btn.btn--time=latest.since
                         // End Latest News Widget
-
-                        
+                        // Start Latest Tasks Widget
+                        .widget.widget--tasks 
+                            .widget__header.widget__header--news
+                                h3 Latest Tasks
+                            .widget__content 
+                                each task in latestTasks
+                                    .task
+                                        .task__info
+                                            p=task.title
+                                            span=task.details
+                                        i.fa-regular.fa-trash-can.delete
+                        // End Latest Tasks Widget                        
 
 
 
