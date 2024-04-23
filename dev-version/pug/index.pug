@@ -83,6 +83,22 @@ html(lang="en")
                                         p=ticket.statistic
                                         span=ticket.status
                         // End Tickets Statisticks Widget
+                        // Start Latest News Widget
+                        .widget.widget--news
+                            .widget__header.widget__header--news
+                                h3 Latest News
+                            .widget__content 
+                                each latest in latestNews
+                                    .new
+                                            .new__img 
+                                                img(src=latest.srcImg)
+                                            .new__info 
+                                                p=latest.title
+                                                span=latest.details
+                                            .new__time
+                                                span.btn.btn--time=latest.since
+                        // End Latest News Widget
+
                         
 
 

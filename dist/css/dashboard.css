@@ -63,13 +63,10 @@ textarea {
 
 /* End global rules */
 .btn {
-  width: 60px;
-  height: 24px;
+  display: inline-block;
   font-size: 13px;
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
@@ -113,6 +110,11 @@ textarea {
   background-color: white;
   border-radius: 6px;
   overflow: hidden;
+}
+@media (max-width: 767px) {
+  .widget {
+    text-align: center;
+  }
 }
 .widget span {
   color: #888;
@@ -250,14 +252,12 @@ textarea {
 .header .header__icons .icon--profile img {
   max-width: 100%;
 }
-.header .header_icons_content {
+.header .content {
   position: absolute;
   right: 0;
   top: 100%;
   box-shadow: 0 0 15px #ddd;
   z-index: 100;
-}
-.header .header_icons_content .content {
   width: 400px;
   max-width: 100%;
   height: 100px;
@@ -268,17 +268,8 @@ textarea {
   align-items: center;
   border-radius: 10px;
 }
-.header .header_icons_content .content.content--show {
+.header .content.content--show {
   display: flex;
-}
-
-.draft--widget .draft__footer .btn, .dashboard__widgets .welcome--widget .welcome__footer .btn {
-  margin-left: auto;
-}
-@media (max-width: 767px) {
-  .draft--widget .draft__footer .btn, .dashboard__widgets .welcome--widget .welcome__footer .btn {
-    margin-right: auto;
-  }
 }
 
 /* Index */
@@ -374,8 +365,13 @@ textarea {
 }
 .dashboard__widgets .welcome--widget .welcome__footer {
   padding: 20px;
-  text-align: end;
 }
+@media (min-width: 768px) {
+  .dashboard__widgets .welcome--widget .welcome__footer {
+    text-align: end;
+  }
+}
+
 /* Draft Widget*/
 .draft--widget {
   padding: 20px;
@@ -398,6 +394,12 @@ textarea {
   resize: none;
   height: 160px;
 }
+@media (min-width: 768px) {
+  .draft--widget .draft__footer {
+    text-align: end;
+  }
+}
+
 /* Yearly Target Widget */
 .target--widget {
   /* Elements */
@@ -536,4 +538,51 @@ textarea {
 }
 .widget--tickets .c-red {
   color: #f44336;
+}
+
+/* Latest News Widget */
+.new:not(:first-child) {
+  padding-top: 20px;
+}
+.new:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .new {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .new {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}
+.new .new__img img {
+  width: 100px;
+  border-radius: 6px;
+}
+@media (max-width: 767px) {
+  .new .new__img {
+    margin-bottom: 10px;
+  }
+}
+.new .new__info {
+  flex: 1;
+}
+.new .new__info p {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.new .new__time .btn--time {
+  background-color: #ddd;
+  cursor: default;
+}
+@media (max-width: 767px) {
+  .new .new__time {
+    margin-top: 15px;
+  }
 }

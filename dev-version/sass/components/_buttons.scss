@@ -1,11 +1,8 @@
 .btn {
-  width: 60px;
-  height: 24px;
+  display: inline-block;
   font-size: 13px;
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 5px 10px;
   cursor: pointer;
 }
 

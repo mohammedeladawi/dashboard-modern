@@ -1,10 +1,10 @@
 // Placeholder Selector
-%btn-margin {
-  margin-left: auto;
-  @media ($sm) {
-    margin-right: auto;
-  }
-}
+// %btn-margin {
+//   margin-left: auto;
+//   @media ($sm) {
+//     margin-right: auto;
+//   }
+// }
 
 /* Index */
 .dashboard__widgets {
@@ -88,9 +88,8 @@
     /* Footer */
     .welcome__footer {
       padding: 20px;
-      text-align: end;
-      .btn {
-        @extend %btn-margin;
+      @media ($md) {
+        text-align: end;
       }
     }
   }
@@ -125,8 +124,8 @@
   }
   /* Footer */
   .draft__footer {
-    .btn {
-      @extend %btn-margin;
+    @media ($md) {
+      text-align: end;
     }
   }
 }
@@ -249,6 +248,57 @@
   @each $class, $color in $ticketColors {
     .#{$class} {
       color: $color;
+    }
+  }
+}
+
+/* Latest News Widget */
+.new {
+  &:not(:first-child) {
+    padding-top: 20px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+
+  @media ($sm) {
+    text-align: center;
+  }
+
+  @media ($md) {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .new__img {
+    img {
+      width: 100px;
+      border-radius: 6px;
+    }
+    @media ($sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .new__info {
+    flex: 1;
+    p {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .new__time {
+    .btn--time {
+      background-color: #ddd;
+      cursor: default;
+    }
+    @media ($sm) {
+      margin-top: 15px;
     }
   }
 }
