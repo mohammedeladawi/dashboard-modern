@@ -15,7 +15,7 @@ $md: "min-width: 768px";
 $lg: "min-width: 992px";
 $xl: "min-width: 1200px";
 
-// Define colors
+// Define colors (Yearly Target)
 $targetTypes: (
   money: (
     color: rgb(0, 117, 255),
@@ -29,4 +29,12 @@ $targetTypes: (
     color: rgb(34, 197, 94),
     width: 75%,
   ),
+);
+
+// Tickets Statistics
+$ticketColors: (
+  c-orange: $orangeColor,
+  c-blue: $blueColor,
+  c-green: $greenColor,
+  c-red: $redColor,
 );

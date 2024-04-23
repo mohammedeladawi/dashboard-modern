@@ -71,6 +71,19 @@ html(lang="en")
                                                 //- Display progress
                                                 span.reached(data-progress=`${target.progress}`)
                         // End Yearly Target Widget
+                        // Start Tickets Statistics Widget
+                        .widget.widget--tickets
+                            .widget__header.widget__header--tickets
+                                h3 Tickets Statistics
+                                span Everything About Support Tickets
+                            .widget__content.widget__content--tickets
+                                each ticket in tickets
+                                    .ticket
+                                        i(class=ticket.iconClass)
+                                        p=ticket.statistic
+                                        span=ticket.status
+                        // End Tickets Statisticks Widget
+                        
 
 
 

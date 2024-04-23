@@ -216,3 +216,39 @@
     }
   }
 }
+
+/* Tickets Statistics Widget*/
+.widget--tickets {
+  .widget__header--tickets {
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .widget__content--tickets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .ticket {
+      border: 1px solid $greyColor;
+      padding: 20px;
+      flex: calc(50% - 10px) 1 1;
+      text-align: center;
+      border-radius: 6px;
+      p {
+        margin-top: 12px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 26px;
+      }
+    }
+  }
+
+  /* Icon Colors */
+  @each $class, $color in $ticketColors {
+    .#{$class} {
+      color: $color;
+    }
+  }
+}

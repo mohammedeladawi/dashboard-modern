@@ -6,7 +6,7 @@ doctype
 html(lang="en")
     head 
         include includes/head-tags.pug
-        title #{pageTitle}
+        title=pageTitle
     body
         div(class=pageClassName)
             include layouts/sidebar.pug
