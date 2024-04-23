@@ -335,3 +335,29 @@
     }
   }
 }
+
+/* Top Search Items Widget   */
+.widget--search {
+  .content__head,
+  .item {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .content__head {
+    p,
+    span {
+      font-size: 18px;
+      color: $greyColor;
+    }
+  }
+
+  .btn--count {
+    cursor: default;
+    background-color: #ddd;
+  }
+}

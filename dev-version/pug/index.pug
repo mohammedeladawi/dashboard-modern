@@ -109,7 +109,21 @@ html(lang="en")
                                             p=task.title
                                             span=task.details
                                         i.fa-regular.fa-trash-can.delete
-                        // End Latest Tasks Widget                        
+                        // End Latest Tasks Widget    
+                        // Start Top Search Items Widget     
+                        .widget.widget--search
+                            .widget__header.widget__header--search
+                                h3 Top Search Items
+                            .widget__content 
+                                .content__head
+                                    p Keyword
+                                    span Search Count
+                                .content__body
+                                    each count, category in searchItems
+                                        .item
+                                           p=category
+                                           span.btn.btn--count=count 
+                        // End Top Search Items Widget                    
 
 
 

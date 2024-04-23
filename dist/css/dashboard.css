@@ -611,3 +611,23 @@ textarea {
 .task.deleted .delete {
   display: none;
 }
+
+/* Top Search Items Widget   */
+.widget--search .content__head,
+.widget--search .item {
+  display: flex;
+  justify-content: space-between;
+}
+.widget--search .content__head:not(:last-child),
+.widget--search .item:not(:last-child) {
+  margin-bottom: 15px;
+}
+.widget--search .content__head p,
+.widget--search .content__head span {
+  font-size: 18px;
+  color: #888;
+}
+.widget--search .btn--count {
+  cursor: default;
+  background-color: #ddd;
+}
