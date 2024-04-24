@@ -1,15 +1,20 @@
+/* Button Component */
 .btn {
   display: inline-block;
   font-size: 13px;
   border-radius: 5px;
   padding: 5px 10px;
-  cursor: pointer;
-}
 
-.btn--primary {
-  color: white;
-  background-color: $blueColor;
-  &:hover {
-    background-color: $blueAltColor;
+  &.btn--primary {
+    color: white;
+    background-color: $blueColor;
+    cursor: pointer;
+    &:hover {
+      background-color: $blueAltColor;
+    }
+  }
+
+  &.btn--info {
+    background-color: #ddd;
   }
 }

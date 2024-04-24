@@ -96,7 +96,7 @@ html(lang="en")
                                             p=latest.title
                                             span=latest.details
                                         .new__time
-                                            span.btn.btn--time=latest.since
+                                            span.btn.btn--info=latest.since
                         // End Latest News Widget
                         // Start Latest Tasks Widget
                         .widget.widget--tasks 
@@ -122,9 +122,21 @@ html(lang="en")
                                     each count, category in searchItems
                                         .item
                                            p=category
-                                           span.btn.btn--count=count 
-                        // End Top Search Items Widget                    
-
-
+                                           span.btn.btn--info=count 
+                        // End Top Search Items Widget                   
+                        // Start Latest Uploads Widget
+                        .widget.widget--upload
+                            .widget__header.widget__header--uploads
+                                h3 Latest Uploads
+                            .widget__content 
+                                each upload in latestUploads
+                                    .upload
+                                        .upload__info
+                                            img(src=upload.srcImg)
+                                            .upload__details 
+                                                p=upload.name
+                                                span=upload.consumer 
+                                        span.btn.btn--info.upload__size=upload.size
+                        // End Latest Uploads Widget
 
 

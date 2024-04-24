@@ -62,20 +62,23 @@ textarea {
 }
 
 /* End global rules */
+/* Button Component */
 .btn {
   display: inline-block;
   font-size: 13px;
   border-radius: 5px;
   padding: 5px 10px;
-  cursor: pointer;
 }
-
-.btn--primary {
+.btn.btn--primary {
   color: white;
   background-color: #0075ff;
+  cursor: pointer;
 }
-.btn--primary:hover {
+.btn.btn--primary:hover {
   background-color: #0d69d5;
+}
+.btn.btn--info {
+  background-color: #ddd;
 }
 
 .content__title {
@@ -279,6 +282,15 @@ textarea {
   .draft--widget, .dashboard__widgets .welcome--widget {
     text-align: center;
   }
+}
+
+.widget--upload .upload, .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Index */
@@ -579,10 +591,6 @@ textarea {
   font-size: 18px;
   margin-bottom: 5px;
 }
-.new .new__time .btn--time {
-  background-color: #ddd;
-  cursor: default;
-}
 @media (max-width: 767px) {
   .new .new__time {
     margin-top: 15px;
@@ -591,9 +599,6 @@ textarea {
 
 /* Latest Tasks Widget */
 .task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   /* Deleted Task */
 }
 .task .delete:hover {
@@ -627,7 +632,16 @@ textarea {
   font-size: 18px;
   color: #888;
 }
-.widget--search .btn--count {
-  cursor: default;
-  background-color: #ddd;
+
+/* Latest Uploads Widget */
+.widget--upload .upload:not(:last-child) {
+  margin-bottom: 20px;
+}
+.widget--upload .upload .upload__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.widget--upload .upload .upload__info img {
+  width: 60px;
 }

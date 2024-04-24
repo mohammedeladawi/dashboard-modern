@@ -16,6 +16,15 @@
   }
 }
 
+%center-between-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Index */
 .dashboard__widgets {
   display: grid;
@@ -299,10 +308,6 @@
   }
 
   .new__time {
-    .btn--time {
-      background-color: #ddd;
-      cursor: default;
-    }
     @media ($sm) {
       margin-top: 15px;
     }
@@ -311,9 +316,7 @@
 
 /* Latest Tasks Widget */
 .task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @extend %center-between-flex;
   @extend %new-task;
 
   .delete {
@@ -355,9 +358,22 @@
       color: $greyColor;
     }
   }
+}
 
-  .btn--count {
-    cursor: default;
-    background-color: #ddd;
+/* Latest Uploads Widget */
+.widget--upload {
+  .upload {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    @extend %center-between-flex;
+    .upload__info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        width: 60px;
+      }
+    }
   }
 }
