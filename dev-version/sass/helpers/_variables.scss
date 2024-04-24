@@ -46,3 +46,23 @@ $reminderColors: (
   orange: $orangeColor,
   red: $redColor,
 );
+
+// Social Media Stats
+$appColors: (
+  twitter: (
+    appColor: #1da1f2,
+    rowColor: rgb(29 161 242 / 20%),
+  ),
+  facebook: (
+    appColor: #1877f2,
+    rowColor: rgb(24 119 242 / 20%),
+  ),
+  youtube: (
+    appColor: #ff0000,
+    rowColor: rgb(255 0 0 / 20%),
+  ),
+  linkedin: (
+    appColor: #0077b5,
+    rowColor: rgb(0 119 181 / 20%),
+  ),
+);

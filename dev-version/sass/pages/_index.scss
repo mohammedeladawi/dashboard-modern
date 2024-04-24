@@ -170,10 +170,8 @@
             content: attr(data-progress);
             width: 30px;
             height: 20px;
+            @extend %center-flex;
             color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             position: absolute;
             bottom: calc(100% + 10px);
             font-size: 12px;
@@ -479,6 +477,53 @@
     @extend %center-between-flex;
     i {
       margin-right: 5px;
+    }
+  }
+}
+
+/*  Social Media Stats */
+.widget--social {
+  .app {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    .app__icon {
+      width: 50px;
+      height: 50px;
+      @extend %center-flex;
+      transition-duration: $mainTransitionDuration;
+      &:hover {
+        transform: rotate(5deg);
+      }
+      i {
+        color: #fff;
+      }
+    }
+    .app__stats {
+      flex: 1;
+    }
+    .btn--app {
+      color: white;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+  }
+
+  @each $appName, $colors in $appColors {
+    $appColor: map-get($colors, appColor);
+    $rowColor: map-get($colors, rowColor);
+    .#{$appName} {
+      background-color: $rowColor;
+      .btn--app,
+      .app__icon {
+        background-color: $appColor;
+      }
+      .app__stats {
+        color: $appColor;
+      }
     }
   }
 }

@@ -91,6 +91,12 @@ textarea {
   align-items: center;
 }
 
+.widget--social .app .app__icon, .target--widget .target__content .content_details .progress__container .reached::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Button Component */
 .btn {
   display: inline-block;
@@ -471,9 +477,6 @@ textarea {
   width: 30px;
   height: 20px;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   bottom: calc(100% + 10px);
   font-size: 12px;
@@ -764,4 +767,73 @@ textarea {
 }
 .widget--post .widget__footer--post i {
   margin-right: 5px;
+}
+
+/*  Social Media Stats */
+.widget--social .app {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.widget--social .app:not(:last-child) {
+  margin-bottom: 10px;
+}
+.widget--social .app .app__icon {
+  width: 50px;
+  height: 50px;
+  transition-duration: 0.3s;
+}
+.widget--social .app .app__icon:hover {
+  transform: rotate(5deg);
+}
+.widget--social .app .app__icon i {
+  color: #fff;
+}
+.widget--social .app .app__stats {
+  flex: 1;
+}
+.widget--social .app .btn--app {
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.widget--social .twitter {
+  background-color: rgba(29, 161, 242, 0.2);
+}
+.widget--social .twitter .btn--app,
+.widget--social .twitter .app__icon {
+  background-color: #1da1f2;
+}
+.widget--social .twitter .app__stats {
+  color: #1da1f2;
+}
+.widget--social .facebook {
+  background-color: rgba(24, 119, 242, 0.2);
+}
+.widget--social .facebook .btn--app,
+.widget--social .facebook .app__icon {
+  background-color: #1877f2;
+}
+.widget--social .facebook .app__stats {
+  color: #1877f2;
+}
+.widget--social .youtube {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.widget--social .youtube .btn--app,
+.widget--social .youtube .app__icon {
+  background-color: #ff0000;
+}
+.widget--social .youtube .app__stats {
+  color: #ff0000;
+}
+.widget--social .linkedin {
+  background-color: rgba(0, 119, 181, 0.2);
+}
+.widget--social .linkedin .btn--app,
+.widget--social .linkedin .app__icon {
+  background-color: #0077b5;
+}
+.widget--social .linkedin .app__stats {
+  color: #0077b5;
 }

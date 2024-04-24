@@ -185,5 +185,18 @@ html(lang="en")
                                     i.fa-regular.fa-comments
                                     | 500
                         // End Latest Post Widget
+                        // Start Social Media Stats
+                        .widget.widget--social
+                            .widget__header.widget__header--social
+                                h3 Social Media Stats
+                            .widget__content.widget__content--social
+                                each social in socialStats 
+                                    div(class=`app ${social.app}`)
+                                                .app__icon
+                                                    i(class=social.icon)
+                                                p.app__stats=social.stats
+                                                button.btn.btn--app=social.button
+                        // End Social Media Stats
+
 
 
