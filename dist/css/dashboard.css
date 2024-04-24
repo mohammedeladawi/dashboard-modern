@@ -62,6 +62,35 @@ textarea {
 }
 
 /* End global rules */
+/* Last Project Progress */
+@keyframes hide-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.task:not(:first-child), .new:not(:first-child) {
+  padding-top: 20px;
+}
+.task:not(:last-child), .new:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .widget--post .post, .draft--widget, .dashboard__widgets .welcome--widget {
+    text-align: center;
+  }
+}
+
+.widget--post .widget__footer--post, .widget--upload .upload, .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Button Component */
 .btn {
   display: inline-block;
@@ -268,29 +297,6 @@ textarea {
 }
 .header .content.content--show {
   display: flex;
-}
-
-.task:not(:first-child), .new:not(:first-child) {
-  padding-top: 20px;
-}
-.task:not(:last-child), .new:not(:last-child) {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
-}
-
-@media (max-width: 767px) {
-  .draft--widget, .dashboard__widgets .welcome--widget {
-    text-align: center;
-  }
-}
-
-.widget--upload .upload, .task {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 /* Index */
@@ -693,11 +699,66 @@ textarea {
   animation: hide-show 1s linear infinite alternate;
 }
 
-@keyframes hide-show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Reminders Widget */
+.widget--reminders .reminder {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* Spans Background Color */
+}
+.widget--reminders .reminder:not(:last-child) {
+  margin-bottom: 30px;
+}
+.widget--reminders .reminder > span {
+  display: block;
+}
+.widget--reminders .reminder > span:first-of-type {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.widget--reminders .reminder > span:last-of-type {
+  width: 2px;
+  height: 40px;
+}
+.widget--reminders .reminder .reminder__data p {
+  font-size: 15px;
+  font-weight: bold;
+}
+.widget--reminders .reminder .reminder__data span {
+  font-size: 12px;
+}
+.widget--reminders .reminder.blue > span {
+  background-color: #0075ff;
+}
+.widget--reminders .reminder.green > span {
+  background-color: #22c55e;
+}
+.widget--reminders .reminder.orange > span {
+  background-color: #f59e0b;
+}
+.widget--reminders .reminder.red > span {
+  background-color: #f44336;
+}
+
+/* Latest Post Widget */
+.widget--post .profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.widget--post .profile img {
+  width: 60px;
+}
+.widget--post .post {
+  padding: 15px 0 30px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.widget--post .post p {
+  line-height: 1.6;
+}
+.widget--post .widget__footer--post {
+  padding: 10px 0;
 }

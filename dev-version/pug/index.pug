@@ -138,7 +138,7 @@ html(lang="en")
                                                 span=upload.consumer 
                                         span.btn.btn--info.upload__size=upload.size
                         // End Latest Uploads Widget
-                        // Start Last Project Progress
+                        // Start Last Project Progress Widget
                         .widget.widget--progress 
                             .widget__header.widget__header--progress
                                 h3 Last Project Progress
@@ -149,6 +149,41 @@ html(lang="en")
                                         .workflow
                                             span
                                             p=flow
-                        // End Last Project Progress
+                        // End Last Project Progress Widget
+                        // Start Reminders Widget
+                        .widget.widget--reminders
+                            .widget__header.widget__header--reminders
+                                h3 Reminders
+                            .widget__content.widget__content--reminders
+                                each reminder in reminders
+                                    .reminder(class=reminder.color)
+                                        span
+                                        span
+                                        .reminder__data 
+                                            p=reminder.task
+                                            span=reminder.date
+                            
+                        // End Reminders Widget
+                        // Start Latest Post Widget
+                        .widget.widget--post
+                            .widget__header.widget__header--post
+                                h3 Latest Post
+                            .widget__content.widget__content--post
+                                .profile
+                                    img(src="imgs/avatar.png")
+                                    .post__info
+                                        h4 Mohammed Ibrahim
+                                        span About 3 Hours Ago
+                                .post
+                                    p You Can Fool All Of The People Some Of The Time, And Some Of The People All Of The Time, But You Can't Fool All Of The People All Of The Time.
+                            .widget__footer.widget__footer--post
+                                span
+                                    i.fa-regular.fa-heart
+                                    | 1.8K
+
+                                span
+                                    i.fa-regular.fa-comments
+                                    | 500
+                        // End Latest Post Widget
 
 

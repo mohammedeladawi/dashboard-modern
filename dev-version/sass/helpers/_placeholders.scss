@@ -1,0 +1,23 @@
+// Placeholder Selector
+%new-task {
+  &:not(:first-child) {
+    padding-top: 20px;
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+}
+
+%mobile-center {
+  @media ($sm) {
+    text-align: center;
+  }
+}
+
+%center-between-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

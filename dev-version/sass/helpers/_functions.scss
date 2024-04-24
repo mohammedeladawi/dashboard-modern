@@ -1,0 +1,11 @@
+/* Last Project Progress */
+
+// Progress Span Margin Bottom Calculation Function
+$progressContainerHeight: 250px;
+$spanWidthHeight: 30px;
+@function workflowMB($containerHeight, $spansHeight, $workflowsCount) {
+  @return calc(
+    ($containerHeight - ($spansHeight * $workflowsCount)) /
+      ($workflowsCount - 1)
+  );
+}
