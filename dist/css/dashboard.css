@@ -762,3 +762,6 @@ textarea {
 .widget--post .widget__footer--post {
   padding: 10px 0;
 }
+.widget--post .widget__footer--post i {
+  margin-right: 5px;
+}

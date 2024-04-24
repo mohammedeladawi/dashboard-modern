@@ -477,5 +477,8 @@
   .widget__footer--post {
     padding: 10px 0;
     @extend %center-between-flex;
+    i {
+      margin-right: 5px;
+    }
   }
 }
