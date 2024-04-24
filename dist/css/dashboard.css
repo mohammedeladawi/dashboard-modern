@@ -51,6 +51,7 @@ textarea {
 .page .content {
   flex: 1;
   margin-left: 250px;
+  overflow: hidden;
 }
 @media (max-width: 767px) {
   .page .content {
@@ -105,7 +106,6 @@ textarea {
   padding: 5px 10px;
 }
 .btn.btn--primary {
-  color: white;
   background-color: #0075ff;
   cursor: pointer;
 }
@@ -114,6 +114,21 @@ textarea {
 }
 .btn.btn--info {
   background-color: #ddd;
+}
+.btn.btn--in-progress {
+  background-color: #0075ff;
+}
+.btn.btn--completed {
+  background-color: #22c55e;
+}
+.btn.btn--pending {
+  background-color: #f59e0b;
+}
+.btn.btn--rejected {
+  background-color: #f44336;
+}
+.btn.btn--primary, .btn.btn--in-progress, .btn.btn--completed, .btn.btn--pending, .btn.btn--rejected {
+  color: white;
 }
 
 .content__title {
@@ -836,4 +851,38 @@ textarea {
 }
 .widget--social .linkedin .app__stats {
   color: #0077b5;
+}
+
+/* Projects Table */
+.widget--projects {
+  margin-top: 10px;
+}
+.widget--projects .widget__content--projects {
+  overflow-x: auto;
+}
+.widget--projects table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  border: none;
+}
+.widget--projects table thead {
+  background-color: #eee;
+  font-weight: bold;
+}
+.widget--projects table td {
+  padding: 15px;
+  border: 1px solid #eee;
+  font-size: 15px;
+}
+.widget--projects table .person {
+  display: inline-block;
+  background-color: #fff;
+  padding: 3px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.widget--projects table .person:not(:first-of-type) {
+  margin-left: -14px;
 }

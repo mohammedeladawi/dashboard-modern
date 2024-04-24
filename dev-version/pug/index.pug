@@ -185,7 +185,7 @@ html(lang="en")
                                     i.fa-regular.fa-comments
                                     | 500
                         // End Latest Post Widget
-                        // Start Social Media Stats
+                        // Start Social Media Stats Widget
                         .widget.widget--social
                             .widget__header.widget__header--social
                                 h3 Social Media Stats
@@ -196,7 +196,34 @@ html(lang="en")
                                                     i(class=social.icon)
                                                 p.app__stats=social.stats
                                                 button.btn.btn--app=social.button
-                        // End Social Media Stats
+                        // End Social Media Stats Widget
 
+                    // Start Project Table
+                    .widget.widget--projects 
+                        .widget__header.widget__header--projects
+                            h3 Projects
+                        .widget__content.widget__content--projects
+                            table 
+                                thead
+                                    tr
+                                        td Name	
+                                        td Finish Date
+                                        td Client
+                                        td Price
+                                        td Team
+                                        td Status
+                                tbody
+                                    each project in projects
+                                        tr
+                                            td.name= project.name
+                                            td.date= project.finishDate
+                                            td.client= project.client
+                                            td.price= project.price
+                                            td.team
+                                                each person in project.team
+                                                    img.person(src=person)
+                                            td.status
+                                                span(class=`btn btn--${project.status.toLowerCase().replace(/\s+/g, "-")}`)= project.status
+                    // End Project Table
 
 

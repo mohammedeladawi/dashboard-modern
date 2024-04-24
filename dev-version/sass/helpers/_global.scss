@@ -53,6 +53,7 @@ textarea {
   .content {
     flex: 1;
     margin-left: 250px;
+    overflow: hidden;
     @media ($sm) {
       margin-left: 70px;
     }

@@ -6,7 +6,6 @@
   padding: 5px 10px;
 
   &.btn--primary {
-    color: white;
     background-color: $blueColor;
     cursor: pointer;
     &:hover {
@@ -16,5 +15,29 @@
 
   &.btn--info {
     background-color: #ddd;
+  }
+
+  &.btn--in-progress {
+    background-color: $blueColor;
+  }
+
+  &.btn--completed {
+    background-color: $greenColor;
+  }
+
+  &.btn--pending {
+    background-color: $orangeColor;
+  }
+
+  &.btn--rejected {
+    background-color: $redColor;
+  }
+
+  &.btn--primary,
+  &.btn--in-progress,
+  &.btn--completed,
+  &.btn--pending,
+  &.btn--rejected {
+    color: white;
   }
 }
