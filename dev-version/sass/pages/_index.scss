@@ -347,7 +347,7 @@
     justify-content: space-between;
 
     &:not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 30px;
     }
   }
 
@@ -375,5 +375,81 @@
         width: 60px;
       }
     }
+  }
+}
+
+// Progress Span Margin Bottom Calculation Function
+$progressContainerHeight: 250px;
+$spanWidthHeight: 30px;
+@function workflowMB($containerHeight, $spansHeight, $workflowsCount) {
+  @return calc(
+    ($containerHeight - ($spansHeight * $workflowsCount)) /
+      ($workflowsCount - 1)
+  );
+}
+
+/* Last Project Progress */
+.widget__content--progress {
+  display: flex;
+  .progress__container {
+    height: $progressContainerHeight;
+    width: 3px;
+    background-color: $blueColor;
+    margin-left: 13.5px;
+  }
+  .workflows {
+    margin-left: -16.5px;
+    .workflow {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      span {
+        display: inline-block;
+        width: $spanWidthHeight;
+        height: $spanWidthHeight;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid $blueColor;
+        padding: 2px;
+        position: relative;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: workflowMB(
+          $progressContainerHeight,
+          $spanWidthHeight,
+          5
+        );
+
+        /* Inside The Span */
+        span::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          background-color: $blueColor;
+          position: absolute;
+          border-radius: 50%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &:nth-child(4) {
+        span::before {
+          animation: hide-show 1s linear infinite alternate;
+        }
+      }
+    }
+  }
+}
+
+@keyframes hide-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

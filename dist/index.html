@@ -65,7 +65,7 @@
                 <div class="welcome_header_image"><img src="imgs/welcome.png"></div>
               </div>
               <div class="welcome__profile"><img src="imgs/avatar.png"></div>
-              <div class="welcome__content">
+              <div class="widget__content widget__content--welcome welcome__content">
                 <div> 
                   <p>Mohammed Eladawi</p><span>Developer</span>
                 </div>
@@ -76,7 +76,7 @@
                   <p>$8500</p><span>Earned</span>
                 </div>
               </div>
-              <div class="welcome__footer">
+              <div class="widget__footer widget__footer--welcome welcome__footer">
                 <button class="btn btn--primary">Profile</button>
               </div>
             </div>
@@ -86,21 +86,21 @@
               <div class="widget__header widget__header--draft"> 
                 <h3>Quick Draft</h3><span>Write A Draft For Your Ideas</span>
               </div>
-              <div class="draft__content">
+              <div class="widget__content widget__content--draft draft__content">
                 <input type="text" placeholder="Title">
                 <textarea name="thoughts" cols="30" rows="10" placeholder="Your Thoughts"></textarea>
               </div>
-              <div class="draft__footer">
+              <div class="widget__footer widget__content--footer draft__footer">
                 <button class="btn btn--primary">Save</button>
               </div>
             </div>
             <!-- End Draft Widget-->
             <!-- Start Yearly Target Widget-->
             <div class="widget target--widget">
-              <div class="widget__header widget__header--target target__header">
+              <div class="widget__header widget__header--target">
                 <h3>Yearly Target</h3><span>Targets Of the Year</span>
               </div>
-              <div class="target__content">
+              <div class="widget__content widget__content--target target__content">
                 <div class="content_details content_details--money blue">
                   <div class="target__icon target__icon target__icon--blue"><i class="fa-solid fa-dollar-sign fa-lg"></i></div>
                   <div class="target__info"><span>Money</span>
@@ -151,7 +151,7 @@
               <div class="widget__header widget__header--news">
                 <h3>Latest News</h3>
               </div>
-              <div class="widget__content"> 
+              <div class="widget__content widget__content--news">
                 <div class="new">
                   <div class="new__img"> <img src="imgs/news-01.png"></div>
                   <div class="new__info"> 
@@ -185,10 +185,10 @@
             <!-- End Latest News Widget-->
             <!-- Start Latest Tasks Widget-->
             <div class="widget widget--tasks"> 
-              <div class="widget__header widget__header--news">
+              <div class="widget__header widget__header--tasks">
                 <h3>Latest Tasks</h3>
               </div>
-              <div class="widget__content"> 
+              <div class="widget__content widget__content--tasks"> 
                 <div class="task">
                   <div class="task__info">
                     <p>Record One New Video</p><span>Record Python Create Exe Project</span>
@@ -222,7 +222,7 @@
               <div class="widget__header widget__header--search">
                 <h3>Top Search Items</h3>
               </div>
-              <div class="widget__content"> 
+              <div class="widget__content widget__content--search"> 
                 <div class="content__head">
                   <p>Keyword</p><span>Search Count</span>
                 </div>
@@ -234,16 +234,19 @@
                     <p>JavaScript</p><span class="btn btn--info">180</span>
                   </div>
                   <div class="item">
-                    <p>PHP</p><span class="btn btn--info">160</span>
-                  </div>
-                  <div class="item">
                     <p>Code</p><span class="btn btn--info">145</span>
                   </div>
                   <div class="item">
                     <p>Design</p><span class="btn btn--info">110</span>
                   </div>
                   <div class="item">
-                    <p>Logic</p><span class="btn btn--info">95</span>
+                    <p>Sass</p><span class="btn btn--info">41</span>
+                  </div>
+                  <div class="item">
+                    <p>GulpJS</p><span class="btn btn--info">10</span>
+                  </div>
+                  <div class="item">
+                    <p>ReactJS</p><span class="btn btn--info">400</span>
                   </div>
                 </div>
               </div>
@@ -254,7 +257,7 @@
               <div class="widget__header widget__header--uploads">
                 <h3>Latest Uploads</h3>
               </div>
-              <div class="widget__content"> 
+              <div class="widget__content widget__content--uploads"> 
                 <div class="upload">
                   <div class="upload__info"><img src="imgs/pdf.svg">
                     <div class="upload__details"> 
@@ -300,6 +303,33 @@
               </div>
             </div>
             <!-- End Latest Uploads Widget-->
+            <!-- Start Last Project Progress-->
+            <div class="widget widget--progress"> 
+              <div class="widget__header widget__header--progress">
+                <h3>Last Project Progress</h3>
+              </div>
+              <div class="widget__content widget__content--progress">
+                <div class="progress__container"></div>
+                <div class="workflows">
+                  <div class="workflow"><span></span>
+                    <p>Got The Project</p>
+                  </div>
+                  <div class="workflow"><span></span>
+                    <p>Started The Project</p>
+                  </div>
+                  <div class="workflow"><span></span>
+                    <p>The Project About To Finish</p>
+                  </div>
+                  <div class="workflow"><span></span>
+                    <p>Test The Project</p>
+                  </div>
+                  <div class="workflow"><span></span>
+                    <p>Finish The Project &amp; Get Money</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Last Project Progress-->
           </div>
         </div>
       </div>

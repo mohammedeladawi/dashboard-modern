@@ -26,7 +26,7 @@ html(lang="en")
                                     img(src="imgs/welcome.png")
                             .welcome__profile
                                 img(src="imgs/avatar.png")
-                            .welcome__content
+                            .widget__content.widget__content--welcome.welcome__content
                                 div 
                                     p Mohammed Eladawi
                                     span Developer
@@ -36,7 +36,7 @@ html(lang="en")
                                 div
                                     p $8500
                                     span Earned
-                            .welcome__footer
+                            .widget__footer.widget__footer--welcome.welcome__footer
                                 button.btn.btn--primary Profile
                         // End Welcome Widget
                         // Start Draft Widget
@@ -44,18 +44,18 @@ html(lang="en")
                             .widget__header.widget__header--draft 
                                 h3 Quick Draft
                                 span Write A Draft For Your Ideas
-                            .draft__content
+                            .widget__content.widget__content--draft.draft__content
                                 input(type="text" placeholder="Title")
                                 textarea(name="thoughts", cols="30", rows="10" placeholder="Your Thoughts")
-                            .draft__footer
+                            .widget__footer.widget__content--footer.draft__footer
                                 button.btn.btn--primary Save
                         // End Draft Widget
                         // Start Yearly Target Widget
                         .widget.target--widget
-                            .widget__header.widget__header--target.target__header
+                            .widget__header.widget__header--target
                                 h3 Yearly Target
                                 span Targets Of the Year
-                            .target__content
+                            .widget__content.widget__content--target.target__content
                                 each target in targetFeatures
                                     //- Construct class names dynamically
                                     - const targetClass = `content_details content_details--${target.name} ${target.color}`
@@ -87,7 +87,7 @@ html(lang="en")
                         .widget.widget--news
                             .widget__header.widget__header--news
                                 h3 Latest News
-                            .widget__content 
+                            .widget__content.widget__content--news
                                 each latest in latestNews
                                     .new
                                         .new__img 
@@ -100,9 +100,9 @@ html(lang="en")
                         // End Latest News Widget
                         // Start Latest Tasks Widget
                         .widget.widget--tasks 
-                            .widget__header.widget__header--news
+                            .widget__header.widget__header--tasks
                                 h3 Latest Tasks
-                            .widget__content 
+                            .widget__content.widget__content--tasks 
                                 each task in latestTasks
                                     .task
                                         .task__info
@@ -114,7 +114,7 @@ html(lang="en")
                         .widget.widget--search
                             .widget__header.widget__header--search
                                 h3 Top Search Items
-                            .widget__content 
+                            .widget__content.widget__content--search 
                                 .content__head
                                     p Keyword
                                     span Search Count
@@ -128,7 +128,7 @@ html(lang="en")
                         .widget.widget--upload
                             .widget__header.widget__header--uploads
                                 h3 Latest Uploads
-                            .widget__content 
+                            .widget__content.widget__content--uploads 
                                 each upload in latestUploads
                                     .upload
                                         .upload__info
@@ -138,5 +138,17 @@ html(lang="en")
                                                 span=upload.consumer 
                                         span.btn.btn--info.upload__size=upload.size
                         // End Latest Uploads Widget
+                        // Start Last Project Progress
+                        .widget.widget--progress 
+                            .widget__header.widget__header--progress
+                                h3 Last Project Progress
+                            .widget__content.widget__content--progress
+                                .progress__container
+                                .workflows
+                                    each flow in workflow
+                                        .workflow
+                                            span
+                                            p=flow
+                        // End Last Project Progress
 
 

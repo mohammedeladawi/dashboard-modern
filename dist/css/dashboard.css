@@ -625,7 +625,7 @@ textarea {
 }
 .widget--search .content__head:not(:last-child),
 .widget--search .item:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .widget--search .content__head p,
 .widget--search .content__head span {
@@ -644,4 +644,60 @@ textarea {
 }
 .widget--upload .upload .upload__info img {
   width: 60px;
+}
+
+/* Last Project Progress */
+.widget__content--progress {
+  display: flex;
+}
+.widget__content--progress .progress__container {
+  height: 250px;
+  width: 3px;
+  background-color: #0075ff;
+  margin-left: 13.5px;
+}
+.widget__content--progress .workflows {
+  margin-left: -16.5px;
+}
+.widget__content--progress .workflows .workflow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.widget__content--progress .workflows .workflow span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #0075ff;
+  padding: 2px;
+  position: relative;
+}
+.widget__content--progress .workflows .workflow:not(:last-child) {
+  margin-bottom: 25px;
+  /* Inside The Span */
+}
+.widget__content--progress .workflows .workflow:not(:last-child) span::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #0075ff;
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.widget__content--progress .workflows .workflow:nth-child(4) span::before {
+  animation: hide-show 1s linear infinite alternate;
+}
+
+@keyframes hide-show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
