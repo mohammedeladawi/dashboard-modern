@@ -13,9 +13,8 @@ html(lang="en")
             .content
                 include layouts/header.pug
                 .main__content 
-                    .content__title 
-                        h2=pageTitle
-                    .dashboard__widgets
+                    include layouts/content-title.pug
+                    .widgets.widgets-200-450.dashboard__widgets
                         // Start Welcome Widget
                         .widget.welcome--widget
                             .widget__header.widget__header--welcome

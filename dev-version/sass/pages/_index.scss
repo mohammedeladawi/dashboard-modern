@@ -1,14 +1,5 @@
 /* Index */
 .dashboard__widgets {
-  display: grid;
-  @media ($sm) {
-    grid-template-columns: minmax(200px, 1fr);
-  }
-  @media ($md) {
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-  }
-  gap: 10px;
-
   /* Welcome Widget */
   .welcome--widget {
     padding: 0;

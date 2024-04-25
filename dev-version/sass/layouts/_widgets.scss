@@ -1,3 +1,17 @@
+.widgets {
+  display: grid;
+  gap: 10px;
+
+  &-200-450 {
+    @media ($sm) {
+      grid-template-columns: minmax(200px, 1fr);
+    }
+    @media ($md) {
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    }
+  }
+}
+
 .widget {
   padding: 20px;
   span {
