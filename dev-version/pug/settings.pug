@@ -14,4 +14,18 @@ html(lang="en")
                 include layouts/header.pug
                 .main__content 
                     include layouts/content-title.pug
-                    
+                    .widgets.widgets-200-450.settings__widgets
+                        .widget.widget--control
+                            .widget__header.widget__header--control
+                                h3 Site Control
+                                span Control The Website If There Is Maintenance
+                            .widget__content.widget__content--control
+                                .control__box
+                                    .control__info
+                                        p Website Control
+                                        span Open/Close Website And Type The Reason
+                                    .toggle__switch
+                                        label
+                                            input(type='checkbox')
+                                            div
+                                textarea(class='message', name="message", placeholder="Clone message content")

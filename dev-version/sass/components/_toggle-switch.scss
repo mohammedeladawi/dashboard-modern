@@ -1,0 +1,87 @@
+// Calculation Functions
+@function toggleIconDimensions($toggleBoxHeight) {
+  @return calc($toggleBoxHeight - 8px);
+}
+
+// Place From Left Side And Top If Checked
+@function notCheckedToggleIconPlace($toggleBoxHeight, $toggleIconDimensions) {
+  @return calc(($toggleBoxHeight - $toggleIconDimensions) / 2);
+}
+
+// Place From (Left Side Only) If Not Checked
+@function checkedToggleIconPlaceLeft(
+  $toggleIconDimensions,
+  $notCheckedToggleIconPlace
+) {
+  @return calc(((100% - $toggleIconDimensions) - $notCheckedToggleIconPlace));
+}
+
+@mixin toggleSwitchComponent($toggleBoxWidth, $toggleBoxHeight) {
+  $toggleIconDimensions: toggleIconDimensions($toggleBoxHeight);
+
+  $notCheckedToggleIconPlace: notCheckedToggleIconPlace(
+    $toggleBoxHeight,
+    $toggleIconDimensions
+  );
+
+  $checkedToggleIconPlaceLeft: checkedToggleIconPlaceLeft(
+    $toggleIconDimensions,
+    $notCheckedToggleIconPlace
+  );
+
+  // The Classes Inside The Toggle Switch
+  div {
+    width: $toggleBoxWidth;
+    height: $toggleBoxHeight;
+
+    &::before {
+      font-size: calc($toggleIconDimensions / 2);
+      width: $toggleIconDimensions;
+      height: $toggleIconDimensions;
+      left: $notCheckedToggleIconPlace;
+      top: $notCheckedToggleIconPlace;
+    }
+  }
+
+  input:checked + div {
+    &::before {
+      left: $checkedToggleIconPlaceLeft;
+    }
+  }
+}
+
+.toggle__switch {
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  div {
+    display: block;
+    position: relative;
+    background-color: #ccc;
+    border-radius: 16px;
+    cursor: pointer;
+
+    &::before {
+      font-family: var(--fa-style-family-classic);
+      content: "\f00d";
+      font-weight: 900;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #fff;
+      @extend %center-flex;
+      color: #aaa;
+      transition-duration: $mainTransitionDuration;
+    }
+  }
+
+  input:checked + div {
+    background-color: $blueColor;
+    &::before {
+      content: "\f00c";
+      color: $blueColor;
+    }
+  }
+
+  @include toggleSwitchComponent(70px, 30px);
+}

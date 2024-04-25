@@ -1,0 +1,25 @@
+/* Settings */
+.settings__widgets {
+  textarea,
+  input {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  .widget--control {
+    .control__box {
+      margin-bottom: 15px;
+      @extend %center-between-flex;
+      span {
+        font-size: 13px;
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      resize: none;
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+  }
+}
