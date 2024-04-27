@@ -56,6 +56,7 @@
             <h2>Settings</h2>
           </div>
           <div class="widgets widgets-200-450 settings__widgets">
+            <!-- Site Control Widget-->
             <div class="widget widget--control">
               <div class="widget__header widget__header--control">
                 <h3>Site Control</h3><span>Control The Website If There Is Maintenance</span>
@@ -67,12 +68,146 @@
                   </div>
                   <div class="toggle__switch">
                     <label>
+                      <input type="checkbox" checked>
+                      <div></div>
+                    </label>
+                  </div>
+                </div>
+                <textarea class="input input--message" name="message" placeholder="Clone message content"></textarea>
+              </div>
+            </div>
+            <!-- General Info Widget-->
+            <div class="widget widget--general">
+              <div class="widget__header widget__header--info">
+                <h3>General Info</h3><span>General Information About Your Account</span>
+              </div>
+              <div class="widget__content widget__content--general"></div>
+              <label class="first-name">First Name
+                <input class="input" type="text" placeholder="First Name">
+              </label>
+              <label class="last-name">Last Name
+                <input class="input" type="text" placeholder="Last Name">
+              </label>
+              <label class="email">Email
+                <div class="disabled__box">
+                  <input class="input input--disabled" type="text" value="o@nn.sa" disabled>
+                  <button>Change</button>
+                </div>
+              </label>
+            </div>
+            <!-- Security Info Widget-->
+            <div class="widget widget--security">
+              <div class="widget__header widget__header--security">
+                <h3>Security Info</h3><span>Security Information About Your Account</span>
+              </div>
+              <div class="widget__content widget__content--security">        
+                <div class="password">
+                  <div>
+                    <p>Password</p><span>Last Change On 25/10/2021</span>
+                  </div>
+                  <button class="btn btn--primary">Change</button>
+                </div>
+                <div class="factors">
+                  <div>
+                    <p>Two-Factor Authentication</p><span>Enable/Disable The Feature</span>
+                  </div>
+                  <div class="toggle__switch">
+                    <label>
                       <input type="checkbox">
                       <div></div>
                     </label>
                   </div>
                 </div>
-                <textarea class="message" name="message" placeholder="Clone message content"></textarea>
+                <div class="devices">
+                  <div>
+                    <p>Devices</p><span>Check The Login Devices List</span>
+                  </div>
+                  <button class="btn">Devices</button>
+                </div>
+              </div>
+            </div>
+            <!-- Social Info Widget-->
+            <div class="widget widget--social">
+              <div class="widget__header widget__header--social">
+                <h3>Social Info</h3><span>Social Media Information</span>
+              </div>
+              <div class="widget__content widget__content--social"></div>
+              <div class="input__container"> 
+                <input class="input input--twitter" type="text" placeholder="Twitter Username"><i class="fa-brands fa-twitter"></i>
+              </div>
+              <div class="input__container"> 
+                <input class="input input--facebook" type="text" placeholder="Facebook Username"><i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="input__container"> 
+                <input class="input input--linkedin" type="text" placeholder="Linkedin Username"><i class="fa-brands fa-linkedin"></i>
+              </div>
+              <div class="input__container"> 
+                <input class="input input--youtube" type="text" placeholder="Youtube Username"><i class="fa-brands fa-youtube"></i>
+              </div>
+            </div>
+            <!-- Social Widgets Control-->
+            <div class="widget widget--control-widgets">
+              <div class="widget__header widget__header--control-widgets">
+                <h3>Widgets Control</h3><span>Show/Hide Widgets</span>
+              </div>
+              <div class="widget__content widget__content--control-widgets">
+                <label class="features__container">
+                  <input class="feature" type="checkbox" checked>Quick Draft
+                </label>
+                <label class="features__container">
+                  <input class="feature" type="checkbox" checked>Yearly Targets
+                </label>
+                <label class="features__container">
+                  <input class="feature" type="checkbox" checked>Tickets Statistics
+                </label>
+                <label class="features__container">
+                  <input class="feature" type="checkbox" checked>Latest News
+                </label>
+                <label class="features__container">
+                  <input class="feature" type="checkbox">Latest Tasks
+                </label>
+                <label class="features__container">
+                  <input class="feature" type="checkbox" checked>Top Search Items
+                </label>
+              </div>
+            </div>
+            <!-- Backup Manager Widget-->
+            <div class="widget widget--backup">
+              <div class="widget__header widget__header--backup">
+                <h3>Backup Manager</h3><span>Control Backup Time And Location</span>
+              </div>
+              <div class="widget__content widget__content--backup">
+                <div class="times__container">
+                  <label class="time">
+                    <input type="radio" name="time" value="daily" checked>Daily
+                  </label>
+                  <label class="time">
+                    <input type="radio" name="time" value="weekly">Weekly
+                  </label>
+                  <label class="time">
+                    <input type="radio" name="time" value="monthly">Monthly
+                  </label>
+                </div>
+                <div class="servers__container">
+                  <input type="radio" name="server" value="megaman" id="megaman">
+                  <label class="server" for="megaman">
+                    <div class="server__info"><i class="fa-solid fa-server"></i>
+                      <p>Megaman</p>
+                    </div>
+                  </label>
+                  <input type="radio" name="server" value="zero" id="zero" checked>
+                  <label class="server" for="zero">
+                    <div class="server__info"><i class="fa-solid fa-server"></i>
+                      <p>Zero</p>
+                    </div>
+                  </label>
+                  <input type="radio" name="server" value="sigma" id="sigma">
+                  <label class="server" for="sigma">
+                    <div class="server__info"><i class="fa-solid fa-server"></i>
+                      <p>Sigma</p>
+                    </div>
+                  </label>
+                </div>
               </div>
             </div>
           </div>

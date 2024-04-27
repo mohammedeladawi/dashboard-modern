@@ -30,6 +30,10 @@ textarea {
   border-radius: 6px;
 }
 
+button {
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar {
   width: 15px;
 }
@@ -87,16 +91,26 @@ textarea {
   }
 }
 
-.settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.widget--social .app .app__icon, .target--widget .target__content .content_details .progress__container .reached::before, .toggle__switch div::before {
+.settings__widgets .servers__container .server, .settings__widgets .widget--social .input__container i, .widget--social .app .app__icon, .target--widget .target__content .content_details .progress__container .reached::before, .toggle__switch div::before {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.settings__widgets .widget--backup .times__container .time, .settings__widgets .widget--control-widgets .features__container {
+  display: block;
+}
+.settings__widgets .widget--backup .times__container .time:not(:last-of-type), .settings__widgets .widget--control-widgets .features__container:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.settings__widgets .widget--backup .times__container .time input, .settings__widgets .widget--control-widgets .features__container input, .settings__widgets .widget--backup .times__container .time .draft--widget .draft__content textarea, .settings__widgets .widget--control-widgets .features__container .draft--widget .draft__content textarea, .draft--widget .draft__content .settings__widgets .widget--backup .times__container .time textarea, .settings__widgets .widget--backup .times__container .draft--widget .draft__content .time textarea, .draft--widget .draft__content .settings__widgets .widget--control-widgets .features__container textarea, .settings__widgets .widget--control-widgets .draft--widget .draft__content .features__container textarea {
+  margin-right: 15px;
 }
 
 /* Button Component */
@@ -938,12 +952,26 @@ textarea {
 }
 
 /* Settings */
-.settings__widgets textarea,
-.settings__widgets input,
-.settings__widgets .draft--widget .draft__content textarea,
-.draft--widget .draft__content .settings__widgets textarea {
+.settings__widgets {
+  /* Site Control */
+  /* General Info */
+  /* Security Info */
+  /* Social Info */
+  /* Widgets Control */
+  /* Backup Manager */
+}
+.settings__widgets .input {
+  display: block;
   border: 1px solid #ddd;
   padding: 10px;
+  width: 100%;
+  margin-top: 5px;
+}
+.settings__widgets .input:disabled {
+  background-color: #f0f4f8;
+  color: #bbb;
+  width: 80%;
+  cursor: no-drop;
 }
 .settings__widgets .widget--control .control__box {
   margin-bottom: 15px;
@@ -951,14 +979,104 @@ textarea {
 .settings__widgets .widget--control .control__box span {
   font-size: 13px;
 }
-.settings__widgets .widget--control textarea {
-  width: 100%;
+.settings__widgets .widget--control .input--message {
   height: 150px;
   resize: none;
 }
-.settings__widgets .widget--control textarea::-moz-placeholder {
+.settings__widgets .widget--control .input--message::-moz-placeholder {
   font-size: 14px;
 }
-.settings__widgets .widget--control textarea::placeholder {
+.settings__widgets .widget--control .input--message::placeholder {
   font-size: 14px;
+}
+.settings__widgets .widget--general .first-name,
+.settings__widgets .widget--general .last-name,
+.settings__widgets .widget--general .email {
+  display: block;
+  color: #888;
+  font-size: 14px;
+}
+.settings__widgets .widget--general .first-name:not(:last-of-type),
+.settings__widgets .widget--general .last-name:not(:last-of-type),
+.settings__widgets .widget--general .email:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+.settings__widgets .widget--general .disabled__box button {
+  background-color: transparent;
+  color: #0075ff;
+}
+.settings__widgets .widget--security .widget__content--security > div:not(:first-child) {
+  padding-top: 10px;
+}
+.settings__widgets .widget--security .widget__content--security > div:not(:last-child) {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.settings__widgets .widget--security .widget__content--security > div p {
+  margin-bottom: 10px;
+}
+.settings__widgets .widget--social .input__container {
+  position: relative;
+}
+.settings__widgets .widget--social .input__container:not(:last-child) {
+  margin-bottom: 15px;
+}
+.settings__widgets .widget--social .input__container .input {
+  padding-left: 50px;
+}
+.settings__widgets .widget--social .input__container .input::-moz-placeholder {
+  font-size: 13px;
+}
+.settings__widgets .widget--social .input__container .input::placeholder {
+  font-size: 13px;
+}
+.settings__widgets .widget--social .input__container .input:focus + i {
+  color: #000;
+}
+.settings__widgets .widget--social .input__container i {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  border-right: 1px solid #ddd;
+  color: #888;
+  left: 0;
+  top: 0;
+  transition-duration: 0.3s;
+}
+.settings__widgets .widget--backup .times__container {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+.settings__widgets .servers__container {
+  padding-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+  /* When Checked */
+}
+.settings__widgets .servers__container input[type=radio], .settings__widgets .servers__container .draft--widget .draft__content textarea[type=radio], .draft--widget .draft__content .settings__widgets .servers__container textarea[type=radio] {
+  display: none;
+}
+.settings__widgets .servers__container .server {
+  flex: 1;
+  height: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .settings__widgets .servers__container .server {
+    flex-basis: 100%;
+  }
+}
+.settings__widgets .servers__container input[type=radio]:checked + .server, .settings__widgets .servers__container .draft--widget .draft__content textarea[type=radio]:checked + .server, .draft--widget .draft__content .settings__widgets .servers__container textarea[type=radio]:checked + .server {
+  border-color: #0075ff;
+}
+.settings__widgets .servers__container input[type=radio]:checked + .server i, .settings__widgets .servers__container .draft--widget .draft__content textarea[type=radio]:checked + .server i, .draft--widget .draft__content .settings__widgets .servers__container textarea[type=radio]:checked + .server i,
+.settings__widgets .servers__container input[type=radio]:checked + .server p,
+.settings__widgets .servers__container .draft--widget .draft__content textarea[type=radio]:checked + .server p,
+.draft--widget .draft__content .settings__widgets .servers__container textarea[type=radio]:checked + .server p {
+  color: #0075ff;
 }

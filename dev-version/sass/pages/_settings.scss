@@ -1,9 +1,18 @@
 /* Settings */
 .settings__widgets {
-  textarea,
-  input {
+  /* Site Control */
+  .input {
+    display: block;
     border: 1px solid #ddd;
     padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    &:disabled {
+      background-color: #f0f4f8;
+      color: #bbb;
+      width: 80%;
+      cursor: no-drop;
+    }
   }
   .widget--control {
     .control__box {
@@ -13,12 +22,135 @@
         font-size: 13px;
       }
     }
-    textarea {
-      width: 100%;
+    .input--message {
       height: 150px;
       resize: none;
       &::placeholder {
         font-size: 14px;
+      }
+    }
+  }
+
+  /* General Info */
+  .widget--general {
+    .first-name,
+    .last-name,
+    .email {
+      display: block;
+      color: $greyColor;
+      font-size: 14px;
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+    }
+
+    .disabled__box {
+      @extend %center-between-flex;
+      button {
+        background-color: transparent;
+        color: $blueColor;
+      }
+    }
+  }
+
+  /* Security Info */
+  .widget--security {
+    .widget__content--security {
+      > div {
+        &:not(:first-child) {
+          padding-top: 10px;
+        }
+        &:not(:last-child) {
+          margin-bottom: 10px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #eee;
+        }
+        @extend %center-between-flex;
+        p {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  /* Social Info */
+  .widget--social {
+    .input__container {
+      position: relative;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      .input {
+        padding-left: 50px;
+        &::placeholder {
+          font-size: 13px;
+        }
+        &:focus + i {
+          color: #000;
+        }
+      }
+
+      i {
+        position: absolute;
+        width: 40px;
+        height: 100%;
+        border-right: 1px solid #ddd;
+        color: $greyColor;
+        @extend %center-flex;
+        left: 0;
+        top: 0;
+        transition-duration: $mainTransitionDuration;
+      }
+    }
+  }
+
+  /* Widgets Control */
+  .widget--control-widgets {
+    .features__container {
+      @extend %labelBlock;
+    }
+  }
+
+  /* Backup Manager */
+  .widget--backup {
+    .times__container {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      .time {
+        @extend %labelBlock;
+      }
+    }
+  }
+
+  .servers__container {
+    padding-top: 20px;
+    @extend %center-between-flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    input[type="radio"] {
+      display: none;
+    }
+    .server {
+      flex: 1;
+      height: 100px;
+      margin-bottom: 10px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      text-align: center;
+      @extend %center-flex;
+      cursor: pointer;
+      @media ($sm) {
+        flex-basis: 100%;
+      }
+    }
+
+    /* When Checked */
+    input[type="radio"]:checked + .server {
+      border-color: $blueColor;
+      i,
+      p {
+        color: $blueColor;
       }
     }
   }

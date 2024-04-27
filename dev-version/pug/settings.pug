@@ -15,6 +15,8 @@ html(lang="en")
                 .main__content 
                     include layouts/content-title.pug
                     .widgets.widgets-200-450.settings__widgets
+    
+                        // Site Control Widget
                         .widget.widget--control
                             .widget__header.widget__header--control
                                 h3 Site Control
@@ -26,6 +28,90 @@ html(lang="en")
                                         span Open/Close Website And Type The Reason
                                     .toggle__switch
                                         label
-                                            input(type='checkbox')
+                                            input(type='checkbox' checked)
                                             div
-                                textarea(class='message', name="message", placeholder="Clone message content")
+                                textarea(class='input input--message', name="message", placeholder="Clone message content")
+                       
+                        // General Info Widget
+                        .widget.widget--general
+                            .widget__header.widget__header--info
+                                h3 General Info
+                                span General Information About Your Account
+                            .widget__content.widget__content--general
+                            label.first-name
+                                |First Name
+                                input(class= "input" type="text" placeholder="First Name") 
+                            label.last-name
+                                |Last Name
+                                input(class= "input" type="text" placeholder="Last Name") 
+                            label.email
+                                | Email
+                                .disabled__box
+                                    input(class= "input input--disabled" type="text" value="o@nn.sa" disabled)
+                                    button Change
+
+                        // Security Info Widget
+                        .widget.widget--security
+                            .widget__header.widget__header--security
+                                h3 Security Info
+                                span Security Information About Your Account
+                            .widget__content.widget__content--security         
+                                div.password
+                                    div
+                                        p Password
+                                        span Last Change On 25/10/2021
+                                    button.btn.btn--primary Change
+                                div.factors
+                                    div
+                                        p Two-Factor Authentication
+                                        span Enable/Disable The Feature
+                                    .toggle__switch
+                                        label
+                                            input(type="checkbox")
+                                            div
+                                div.devices
+                                    div
+                                        p Devices
+                                        span Check The Login Devices List
+                                    button.btn Devices
+
+                        // Social Info Widget
+                        .widget.widget--social
+                            .widget__header.widget__header--social
+                                h3 Social Info
+                                span Social Media Information
+                            .widget__content.widget__content--social
+                            each info in socialInfos
+                                .input__container 
+                                    input(class=`input input--${info.name}` type="text" placeholder=`${info.name[0].toUpperCase() + info.name.slice(1)} Username`)
+                                    i(class=info.icon)
+
+                        // Social Widgets Control
+                        .widget.widget--control-widgets
+                            .widget__header.widget__header--control-widgets
+                                h3 Widgets Control
+                                span Show/Hide Widgets
+                            .widget__content.widget__content--control-widgets
+                                each label in widgetsControlLabels
+                                        label.features__container
+                                            input(class="feature" type="checkbox", checked= label!=="Latest Tasks")
+                                            | #{label}
+                        
+                        // Backup Manager Widget
+                        .widget.widget--backup
+                            .widget__header.widget__header--backup
+                                h3 Backup Manager
+                                span Control Backup Time And Location
+                            .widget__content.widget__content--backup
+                                .times__container
+                                    each time in backupTimes
+                                        label.time
+                                            input(type="radio" name="time" value=time checked=time==='daily')
+                                            | #{time[0].toUpperCase() + time.slice(1)}
+                                .servers__container
+                                    each server in backupServers
+                                            input(type="radio" name='server' value=server id=server checked=server==='zero')
+                                            label.server(for=server)
+                                                .server__info
+                                                    i(class="fa-solid fa-server")
+                                                    p #{server[0].toUpperCase() + server.slice(1)}
