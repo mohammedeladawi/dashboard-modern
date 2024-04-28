@@ -91,7 +91,7 @@ button {
   }
 }
 
-.settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1079,4 +1079,147 @@ button {
 .settings__widgets .servers__container .draft--widget .draft__content textarea[type=radio]:checked + .server p,
 .draft--widget .draft__content .settings__widgets .servers__container textarea[type=radio]:checked + .server p {
   color: #0075ff;
+}
+
+/* Profile */
+/* Profile Main Widget */
+.widget--profile {
+  border: 1px solid #ddd;
+}
+@media (max-width: 991px) {
+  .widget--profile {
+    flex-direction: column;
+  }
+}
+.widget--profile .profile__person {
+  text-align: center;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+@media (max-width: 991px) {
+  .widget--profile .profile__person {
+    border-right: transparent;
+  }
+}
+.widget--profile .profile__person img {
+  width: 180px;
+}
+.widget--profile .profile__person h4 {
+  margin-bottom: 10px;
+}
+.widget--profile .profile__person .progress__container {
+  width: 120px;
+  height: 4px;
+  background-color: #eee;
+  margin: 10px auto;
+}
+.widget--profile .profile__person .progress__container .reached {
+  display: block;
+  background-color: #0075ff;
+  height: 4px;
+}
+.widget--profile .profile__person .stars {
+  color: #f59e0b;
+  margin-bottom: 10px;
+}
+.widget--profile .profile__info {
+  flex: 1;
+  font-size: 15px;
+}
+.widget--profile .profile__info .info {
+  padding-left: 20px;
+}
+@media (max-width: 991px) {
+  .widget--profile .profile__info .info {
+    text-align: center;
+  }
+  .widget--profile .profile__info .info:first-child {
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+  }
+}
+.widget--profile .profile__info .info:not(:first-child) {
+  padding-top: 15px;
+}
+.widget--profile .profile__info .info:not(:last-child) {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.widget--profile .profile__info .info .info__title {
+  margin-bottom: 15px;
+  color: #888;
+}
+.widget--profile .profile__info .info .info__data {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.widget--profile .profile__info .info .info__data .data,
+.widget--profile .profile__info .info .info__data .toggle__switch {
+  flex: 1 0 250px;
+}
+.widget--profile .profile__info .info .info__data .data span {
+  text-transform: capitalize;
+}
+.widget--profile .profile__info .info .info__data .toggle__switch div {
+  width: 70px;
+  height: 20px;
+}
+.widget--profile .profile__info .info .info__data .toggle__switch div::before {
+  font-size: 6px;
+  width: 12px;
+  height: 12px;
+  left: 4px;
+  top: 4px;
+}
+.widget--profile .profile__info .info .info__data .toggle__switch input:checked + div::before, .widget--profile .profile__info .info .info__data .toggle__switch .draft--widget .draft__content textarea:checked + div::before, .draft--widget .draft__content .widget--profile .profile__info .info .info__data .toggle__switch textarea:checked + div::before {
+  left: calc(100% - 12px - 4px);
+}
+@media (max-width: 991px) {
+  .widget--profile .profile__info .info .info__data .toggle__switch div {
+    margin: 0 auto;
+  }
+}
+
+/* Others Widgets */
+.others {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  /* My Skills Widget */
+  /* Latest Activities Widget */
+}
+@media (max-width: 991px) {
+  .others {
+    flex-direction: column;
+  }
+}
+.others .widget--skills {
+  flex: 1;
+}
+.others .widget--skills .widget__content--skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.others .widget--activities {
+  flex: 3;
+}
+.others .widget--activities .activity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.others .widget--activities .activity:not(:first-child) {
+  padding-top: 10px;
+}
+.others .widget--activities .activity:not(:last-child) {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.others .widget--activities .activity .activity__img img {
+  width: 80px;
+}
+.others .widget--activities .activity .activity__info {
+  flex: 1;
 }

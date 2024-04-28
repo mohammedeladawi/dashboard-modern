@@ -14,3 +14,54 @@ html(lang="en")
                 include layouts/header.pug
                 .main__content 
                     include layouts/content-title.pug
+                    // Profile Main Widget
+                    .widget.widget--profile
+                        .profile__person
+                            img(src="imgs/avatar.png")
+                            h4 Mohammed Eladawi
+                            span Level 20
+                            .progress__container
+                                span.reached(style="width: 70%;")
+                            .stars
+                                -   for (let i =0; i < 5; i++)
+                                        i.fa-solid.fa-star
+                            span.ratings 550 Ratings
+                        .profile__info
+                            each info in profileInfos
+                                .info
+                                    h3.info__title= info['title']
+                                    .info__data
+                                        each value, key in info
+                                            if key !== 'title'
+                                                .data #[span= `${key.replace(/_/g, " ")}: `] #{value}
+                                        .toggle__switch
+                                            label
+                                                input(type='checkbox' checked)
+                                                div                                            
+                    // Others Widgets
+                    .others
+                        // My Skills Widget
+                        .widget.widget--skills
+                            .widget__header.widget__header--skills
+                                h3 My Skills
+                                span Complete Skills List
+                            .widget__content.widget__content--skills
+                                each skill in skills
+                                    span.btn.btn--info= skill
+                        
+                        // Latest Activities Widget
+                        .widget.widget--activities
+                            .widget__header.widget__header--activities
+                                h3 Latest Activities
+                                span Latest Activities Done By The User
+                            .widget__content.widget__content--activities
+                                each activity in activities
+                                    .activity
+                                        .activity__img
+                                            img(src=activity.imgSrc)
+                                        .activity__info
+                                            h5=activity.title
+                                            span=activity.info
+                                        .activity__time
+                                            p=activity.time
+                                            span=activity.day

@@ -1,0 +1,133 @@
+/* Profile */
+/* Profile Main Widget */
+.widget--profile {
+  @extend %center-between-flex;
+  border: 1px solid #ddd;
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+  .profile__person {
+    text-align: center;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+
+    @media (max-width: 991px) {
+      border-right: transparent;
+    }
+
+    img {
+      width: 180px;
+    }
+    h4 {
+      margin-bottom: 10px;
+    }
+    .progress__container {
+      width: 120px;
+      height: 4px;
+      background-color: #eee;
+      margin: 10px auto;
+      .reached {
+        display: block;
+        background-color: $blueColor;
+        height: 4px;
+      }
+    }
+    .stars {
+      color: $orangeColor;
+      margin-bottom: 10px;
+    }
+  }
+  .profile__info {
+    flex: 1;
+    font-size: 15px;
+    .info {
+      padding-left: 20px;
+
+      @media (max-width: 991px) {
+        text-align: center;
+        &:first-child {
+          padding-top: 15px;
+          border-top: 1px solid #ddd;
+        }
+      }
+
+      &:not(:first-child) {
+        padding-top: 15px;
+      }
+      &:not(:last-child) {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+      }
+      .info__title {
+        margin-bottom: 15px;
+        color: $greyColor;
+      }
+      .info__data {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        .data,
+        .toggle__switch {
+          flex: 1 0 250px;
+        }
+        .data {
+          span {
+            text-transform: capitalize;
+          }
+        }
+        .toggle__switch {
+          @include toggleSwitchComponent(70px, 20px);
+          div {
+            @media (max-width: 991px) {
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Others Widgets */
+.others {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+  /* My Skills Widget */
+  .widget--skills {
+    flex: 1;
+    .widget__content--skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+  }
+
+  /* Latest Activities Widget */
+  .widget--activities {
+    flex: 3;
+    .activity {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      &:not(:first-child) {
+        padding-top: 10px;
+      }
+      &:not(:last-child) {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .activity__img {
+        img {
+          width: 80px;
+        }
+      }
+      .activity__info {
+        flex: 1;
+      }
+    }
+  }
+}
