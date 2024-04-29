@@ -14,3 +14,23 @@ html(lang="en")
                 include layouts/header.pug
                 .main__content 
                     include layouts/content-title.pug
+                    // Profile Widgets
+                    .widgets.widgets-200-450.widgets--profile
+                        // Person Dashboard Widget
+                        each person in personsDashboards
+                            .widget.widget--person
+                                .widget__header.widget__header--person
+                                    span.date= person.date
+                                    h3= person.name + " Dashboard"
+                                    span= person.name + " Dashboard Project Design And Programming And Hosting" 
+                                    .person__imgs
+                                        each image in person.images
+                                            img(src= image)
+                                .widget__content.widget__content--person
+                                    each skill in person.skills
+                                        span.btn.btn--info= skill
+                                .widget__footer.widget__footer--person
+                                    .progress__container
+                                        span.reached(
+                                            style= `width: ${person.progress}; background-color: ${person.progress > "50%" ? "#22c55e" : person.progress < "50%" && person.progress > "25%" ? "#f44336" : "#0075ff"}`)
+                                    span.cost= person.cost

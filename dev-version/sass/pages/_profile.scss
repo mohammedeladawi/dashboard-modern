@@ -22,14 +22,10 @@
       margin-bottom: 10px;
     }
     .progress__container {
-      width: 120px;
-      height: 4px;
-      background-color: #eee;
+      @extend %progress;
       margin: 10px auto;
       .reached {
-        display: block;
         background-color: $blueColor;
-        height: 4px;
       }
     }
     .stars {

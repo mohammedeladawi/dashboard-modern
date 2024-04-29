@@ -91,7 +91,7 @@ button {
   }
 }
 
-.widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.widgets--profile .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,6 +111,18 @@ button {
 }
 .settings__widgets .widget--backup .times__container .time input, .settings__widgets .widget--control-widgets .features__container input, .settings__widgets .widget--backup .times__container .time .draft--widget .draft__content textarea, .settings__widgets .widget--control-widgets .features__container .draft--widget .draft__content textarea, .draft--widget .draft__content .settings__widgets .widget--backup .times__container .time textarea, .settings__widgets .widget--backup .times__container .draft--widget .draft__content .time textarea, .draft--widget .draft__content .settings__widgets .widget--control-widgets .features__container textarea, .settings__widgets .widget--control-widgets .draft--widget .draft__content .features__container textarea {
   margin-right: 15px;
+}
+
+.widgets--profile .widget--person .widget__footer--person .progress__container, .widget--profile .profile__person .progress__container {
+  width: 120px;
+  height: 7px;
+  background-color: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.widgets--profile .widget--person .widget__footer--person .progress__container .reached, .widget--profile .profile__person .progress__container .reached {
+  display: block;
+  height: 100%;
 }
 
 /* Button Component */
@@ -1108,15 +1120,10 @@ button {
   margin-bottom: 10px;
 }
 .widget--profile .profile__person .progress__container {
-  width: 120px;
-  height: 4px;
-  background-color: #eee;
   margin: 10px auto;
 }
 .widget--profile .profile__person .progress__container .reached {
-  display: block;
   background-color: #0075ff;
-  height: 4px;
 }
 .widget--profile .profile__person .stars {
   color: #f59e0b;
@@ -1222,4 +1229,47 @@ button {
 }
 .others .widget--activities .activity .activity__info {
   flex: 1;
+}
+
+.widgets--profile .widget--person .widget__header--person {
+  border-bottom: 1px solid #ddd;
+}
+.widgets--profile .widget--person .widget__header--person .date {
+  text-align: end;
+  font-size: 12px;
+}
+.widgets--profile .widget--person .widget__header--person .person__imgs {
+  margin-top: 15px;
+}
+.widgets--profile .widget--person .widget__header--person .person__imgs img {
+  display: inline-block;
+  width: 40px;
+  border-radius: 50%;
+  padding: 3px;
+  background-color: #fff;
+}
+.widgets--profile .widget--person .widget__header--person .person__imgs img:not(:first-of-type) {
+  margin-left: -15px;
+}
+.widgets--profile .widget--person .widget__header--person .person__imgs img:hover {
+  position: relative;
+}
+.widgets--profile .widget--person .widget__content--person {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .widgets--profile .widget--person .widget__content--person {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 767px) {
+  .widgets--profile .widget--person .widget__footer--person {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

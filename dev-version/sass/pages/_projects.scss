@@ -1,0 +1,49 @@
+.widgets--profile {
+  .widget--person {
+    .widget__header--person {
+      border-bottom: 1px solid #ddd;
+
+      .date {
+        text-align: end;
+        font-size: 12px;
+      }
+      .person__imgs {
+        margin-top: 15px;
+        img {
+          display: inline-block;
+          width: 40px;
+          border-radius: 50%;
+          padding: 3px;
+          background-color: #fff;
+          &:not(:first-of-type) {
+            margin-left: -15px;
+          }
+          &:hover {
+            position: relative;
+          }
+        }
+      }
+    }
+    .widget__content--person {
+      display: flex;
+      gap: 10px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 20px;
+      @media ($sm) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .widget__footer--person {
+      @extend %center-between-flex;
+      @media ($sm) {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .progress__container {
+        @extend %progress;
+      }
+    }
+  }
+}

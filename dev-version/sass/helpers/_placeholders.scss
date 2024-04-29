@@ -37,3 +37,15 @@
     margin-right: 15px;
   }
 }
+
+%progress {
+  width: 120px;
+  height: 7px;
+  background-color: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  .reached {
+    display: block;
+    height: 100%;
+  }
+}
