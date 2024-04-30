@@ -91,7 +91,7 @@ button {
   }
 }
 
-.widgets--courses .widget--course .widget__footer--course, .widgets--profile .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.widgets--courses .widget--course .widget__footer--course, .widgets--projects .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,14 +113,14 @@ button {
   margin-right: 15px;
 }
 
-.widgets--profile .widget--person .widget__footer--person .progress__container, .widget--profile .profile__person .progress__container {
+.widgets--projects .widget--person .widget__footer--person .progress__container, .widget--profile .profile__person .progress__container {
   width: 120px;
   height: 7px;
   background-color: #eee;
   border-radius: 6px;
   overflow: hidden;
 }
-.widgets--profile .widget--person .widget__footer--person .progress__container .reached, .widget--profile .profile__person .progress__container .reached {
+.widgets--projects .widget--person .widget__footer--person .progress__container .reached, .widget--profile .profile__person .progress__container .reached {
   display: block;
   height: 100%;
 }
@@ -413,7 +413,7 @@ button {
   display: flex;
 }
 
-/* Index */
+/* Index Page */
 .dashboard__widgets {
   /* Welcome Widget */
 }
@@ -968,7 +968,7 @@ button {
   margin-left: -14px;
 }
 
-/* Settings */
+/* Settings Page */
 .settings__widgets {
   /* Site Control */
   /* General Info */
@@ -1098,7 +1098,7 @@ button {
   color: #0075ff;
 }
 
-/* Profile */
+/* Profile Page */
 /* Profile Main Widget */
 .widget--profile {
   border: 1px solid #ddd;
@@ -1236,30 +1236,31 @@ button {
   flex: 1;
 }
 
-.widgets--profile .widget--person .widget__header--person {
+/* Projects Page */
+.widgets--projects .widget--person .widget__header--person {
   border-bottom: 1px solid #ddd;
 }
-.widgets--profile .widget--person .widget__header--person .date {
+.widgets--projects .widget--person .widget__header--person .date {
   text-align: end;
   font-size: 12px;
 }
-.widgets--profile .widget--person .widget__header--person .person__imgs {
+.widgets--projects .widget--person .widget__header--person .person__imgs {
   margin-top: 15px;
 }
-.widgets--profile .widget--person .widget__header--person .person__imgs img {
+.widgets--projects .widget--person .widget__header--person .person__imgs img {
   display: inline-block;
   width: 40px;
   border-radius: 50%;
   padding: 3px;
   background-color: #fff;
 }
-.widgets--profile .widget--person .widget__header--person .person__imgs img:not(:first-of-type) {
+.widgets--projects .widget--person .widget__header--person .person__imgs img:not(:first-of-type) {
   margin-left: -15px;
 }
-.widgets--profile .widget--person .widget__header--person .person__imgs img:hover {
+.widgets--projects .widget--person .widget__header--person .person__imgs img:hover {
   position: relative;
 }
-.widgets--profile .widget--person .widget__content--person {
+.widgets--projects .widget--person .widget__content--person {
   display: flex;
   gap: 10px;
   padding-bottom: 20px;
@@ -1267,18 +1268,18 @@ button {
   margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-  .widgets--profile .widget--person .widget__content--person {
+  .widgets--projects .widget--person .widget__content--person {
     flex-direction: column;
     align-items: flex-start;
   }
 }
 @media (max-width: 767px) {
-  .widgets--profile .widget--person .widget__footer--person {
+  .widgets--projects .widget--person .widget__footer--person {
     flex-direction: column;
     gap: 10px;
   }
 }
-/* Courses */
+/* Courses Page */
 .widgets--courses {
   gap: 20px;
 }
