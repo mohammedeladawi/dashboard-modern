@@ -14,4 +14,22 @@ html(lang="en")
                 include layouts/header.pug
                 .main__content 
                     include layouts/content-title.pug
-        
+                    // Courses Widgets
+                    .widgets.widgets-200-300.widgets--courses
+                        each course in courses
+                            // Course Widget
+                            .widget.widget--course
+                                .widget__image
+                                    img.course(src=course.image)
+                                    img.instructor(src=course.instructor)
+                                .widget__content.widget__content--course
+                                    h4.title= course.title
+                                    p.details= course.details
+                                    span.btn.btn--primary.btn--course Course Info
+                                .widget__footer.widget__footer--course
+                                    .followers
+                                        i(class="fa-regular fa-user")
+                                        span.number= course.followers
+                                    .cost
+                                        i(class="fa-solid fa-dollar-sign")
+                                        span.dollars= course.dollars 

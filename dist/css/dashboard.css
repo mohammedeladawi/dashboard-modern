@@ -91,7 +91,7 @@ button {
   }
 }
 
-.widgets--profile .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.widgets--courses .widget--course .widget__footer--course, .widgets--profile .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -232,8 +232,13 @@ button {
   gap: 10px;
 }
 @media (max-width: 767px) {
-  .widgets-200-450 {
+  .widgets-200 {
     grid-template-columns: minmax(200px, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .widgets-200-300 {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 @media (min-width: 768px) {
@@ -1272,4 +1277,62 @@ button {
     flex-direction: column;
     gap: 10px;
   }
+}
+/* Courses */
+.widgets--courses {
+  gap: 20px;
+}
+.widgets--courses .widget--course {
+  padding: 0;
+  /* Header */
+  /* Content */
+  /* Footer */
+}
+.widgets--courses .widget--course .widget__image {
+  position: relative;
+}
+.widgets--courses .widget--course .widget__image .course {
+  width: 100%;
+}
+.widgets--courses .widget--course .widget__image .instructor {
+  display: block;
+  padding: 3px;
+  background-color: #fff;
+  width: 60px;
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.widgets--courses .widget--course .widget__content--course {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.widgets--courses .widget--course .widget__content--course .title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.widgets--courses .widget--course .widget__content--course .details {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.widgets--courses .widget--course .widget__content--course .btn--course {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.widgets--courses .widget--course .widget__footer--course {
+  padding: 10px;
+}
+.widgets--courses .widget--course .widget__footer--course .followers,
+.widgets--courses .widget--course .widget__footer--course .cost {
+  color: #888;
+}
+.widgets--courses .widget--course .widget__footer--course .followers i,
+.widgets--courses .widget--course .widget__footer--course .cost i {
+  margin-right: 5px;
 }

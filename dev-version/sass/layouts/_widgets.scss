@@ -2,12 +2,19 @@
   display: grid;
   gap: 10px;
 
-  &-200-450 {
+  &-200 {
     @media ($sm) {
       grid-template-columns: minmax(200px, 1fr);
     }
-    @media ($md) {
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    &-300 {
+      @media ($md) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+    }
+    &-450 {
+      @media ($md) {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      }
     }
   }
 }
