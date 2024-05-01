@@ -14,3 +14,30 @@ html(lang="en")
                 include layouts/header.pug
                 .main__content 
                     include layouts/content-title.pug
+                    // Friends Widgets
+                    .widgets.widgets-300.widgets--friends
+                        each friend in friends
+                            // Friend Widget
+                            .widget.widget--friend
+                                .widget__header.widget__header--friend
+                                    .contact-icons
+                                        i(class="fa-solid fa-phone rad-half")
+                                        i(class="fa-regular fa-envelope")
+                                    .person
+                                        img.profile(src= friend.img)
+                                        h4.name= friend.name
+                                        span.job= friend.job
+                                .widget__content.widget__content--friend
+                                    .friends
+                                        i(class="fa-regular fa-face-smile fa-fw")
+                                        span= friend.friendsCount + " Friends"
+                                    .projecs
+                                        i(class="fa-solid fa-code-commit fa-fw")
+                                        span= friend.projectsCount + " Projects"
+                                    .articles
+                                        i(class="fa-regular fa-newspaper fa-fw")
+                                        span= friend.articlesCount + " Articles"
+                                .widget__footer.widget__footer--friend
+                                    span.date Joined #{friend.joinDate}
+                                    button.btn.btn--primary Profile
+                                    button.btn.btn--rejected Remove

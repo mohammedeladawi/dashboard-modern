@@ -1,0 +1,59 @@
+/* Friends Page */
+.widgets--friends {
+  .widget--friend {
+    .widget__header--friend {
+      .contact-icons {
+        display: flex;
+        gap: 15px;
+        i {
+          padding: 10px;
+          background-color: #eee;
+          border-radius: 50%;
+          color: $greyColor;
+          transition-duration: $mainTransitionDuration;
+          cursor: pointer;
+          &:hover {
+            color: #fff;
+            background-color: $blueColor;
+          }
+        }
+      }
+    }
+    .person {
+      text-align: center;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      .profile {
+        border-radius: 50%;
+        width: 100px;
+      }
+      .job {
+        font-size: 12px;
+      }
+    }
+
+    .widget__content--friend {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      margin-bottom: 10px;
+      i {
+        margin-right: 5px;
+        color: $greyColor;
+      }
+    }
+
+    .widget__footer--friend {
+      @extend %center-between-flex;
+      gap: 10px;
+      .date {
+        font-size: 12px;
+        flex: 1;
+      }
+      .btn--rejected {
+        &:hover {
+          background-color: #dd3b30;
+        }
+      }
+    }
+  }
+}

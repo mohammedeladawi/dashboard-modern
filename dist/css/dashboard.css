@@ -91,7 +91,7 @@ button {
   }
 }
 
-.widgets--courses .widget--course .widget__footer--course, .widgets--projects .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.widgets--friends .widget--friend .widget__footer--friend, .widgets--courses .widget--course .widget__footer--course, .widgets--projects .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1332,4 +1332,53 @@ button {
 .widgets--courses .widget--course .widget__footer--course .followers i,
 .widgets--courses .widget--course .widget__footer--course .cost i {
   margin-right: 5px;
+}
+
+/* Friends Page */
+.widgets--friends .widget--friend .widget__header--friend .contact-icons {
+  display: flex;
+  gap: 15px;
+}
+.widgets--friends .widget--friend .widget__header--friend .contact-icons i {
+  padding: 10px;
+  background-color: #eee;
+  border-radius: 50%;
+  color: #888;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.widgets--friends .widget--friend .widget__header--friend .contact-icons i:hover {
+  color: #fff;
+  background-color: #0075ff;
+}
+.widgets--friends .widget--friend .person {
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.widgets--friends .widget--friend .person .profile {
+  border-radius: 50%;
+  width: 100px;
+}
+.widgets--friends .widget--friend .person .job {
+  font-size: 12px;
+}
+.widgets--friends .widget--friend .widget__content--friend {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.widgets--friends .widget--friend .widget__content--friend i {
+  margin-right: 5px;
+  color: #888;
+}
+.widgets--friends .widget--friend .widget__footer--friend {
+  gap: 10px;
+}
+.widgets--friends .widget--friend .widget__footer--friend .date {
+  font-size: 12px;
+  flex: 1;
+}
+.widgets--friends .widget--friend .widget__footer--friend .btn--rejected:hover {
+  background-color: #dd3b30;
 }
