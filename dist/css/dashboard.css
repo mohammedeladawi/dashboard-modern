@@ -231,18 +231,13 @@ button {
   display: grid;
   gap: 10px;
 }
-@media (max-width: 767px) {
-  .widgets-200 {
-    grid-template-columns: minmax(200px, 1fr);
-  }
-}
 @media (min-width: 768px) {
-  .widgets-200-300 {
+  .widgets-300 {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 @media (min-width: 768px) {
-  .widgets-200-450 {
+  .widgets-450 {
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   }
 }
@@ -1309,6 +1304,7 @@ button {
   padding: 20px;
   border-bottom: 1px solid #eee;
   position: relative;
+  height: 180px;
 }
 .widgets--courses .widget--course .widget__content--course .title {
   font-size: 20px;
