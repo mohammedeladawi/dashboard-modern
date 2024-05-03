@@ -1,5 +1,4 @@
 /* Files Page */
-
 .page__content {
   display: flex;
   gap: 20px;
@@ -39,27 +38,6 @@
     }
   }
 
-  $fileStats: (
-    pdf: (
-      rgb(0 117 255 / 20%),
-      $blueColor,
-    ),
-    images: (
-      rgb(34 197 94 / 20%),
-      $greenColor,
-    ),
-    word: (
-      rgb(244 67 54 / 20%),
-      $redColor,
-    ),
-    csv: (
-      rgb(245 158 11 / 20%),
-      $orangeColor,
-    ),
-  );
-
-  $filesTypes: map-keys($fileStats);
-
   /* Files Statistics */
   .files-stats {
     background-color: #fff;
@@ -86,11 +64,11 @@
       }
 
       // Apply styles for each file type
-      @each $type in $filesTypes {
+      @each $type, $colors in $fileStats {
         .icon.#{$type} {
-          background-color: nth(map-get($fileStats, $type), 1); // Alt color
+          background-color: nth($colors, 1); // Alt color
           i {
-            color: nth(map-get($fileStats, $type), 2); // Regular color
+            color: nth($colors, 2); // Regular color
           }
         }
       }

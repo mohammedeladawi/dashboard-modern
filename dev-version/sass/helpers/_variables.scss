@@ -69,3 +69,23 @@ $appColors: (
     rowColor: rgb(0 119 181 / 20%),
   ),
 );
+
+/* Files Statistics */
+$fileStats: (
+  pdf: (
+    rgb(0 117 255 / 20%),
+    $blueColor,
+  ),
+  images: (
+    rgb(34 197 94 / 20%),
+    $greenColor,
+  ),
+  word: (
+    rgb(244 67 54 / 20%),
+    $redColor,
+  ),
+  csv: (
+    rgb(245 158 11 / 20%),
+    $orangeColor,
+  ),
+);
