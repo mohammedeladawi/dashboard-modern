@@ -1,8 +1,19 @@
+/* Last Project Progress In Dashboard Page */
 @keyframes hide-show {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Upload Button In Files Page */
+@keyframes up-down {
+  from {
+    transform: translateY(-3px);
+  }
+  to {
+    transform: translateY(0px);
   }
 }

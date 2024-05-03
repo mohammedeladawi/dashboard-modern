@@ -2,14 +2,14 @@
   display: grid;
   gap: 10px;
 
-  &-300 {
-    @media ($md) {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-  }
-  &-450 {
-    @media ($md) {
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  @each $coulmnWidth in $gridColumnsWidth {
+    &-#{$coulmnWidth} {
+      @media ($md) {
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(#{$coulmnWidth}px, 1fr)
+        );
+      }
     }
   }
 }

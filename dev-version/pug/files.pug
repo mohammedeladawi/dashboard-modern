@@ -12,5 +12,34 @@ html(lang="en")
             include layouts/sidebar.pug
             .content
                 include layouts/header.pug
-                .main__content 
+                .main__content
                     include layouts/content-title.pug
+                    .page__content
+                        // Files Widgets
+                        .widgets.widgets-200.widgets--files
+                                - for (var i = 0; i < 20; i++)
+                                    .widget.widget--file
+                                        .widget__content.widget__content--file
+                                            i(class="fa-solid fa-download")
+                                            .file__info
+                                                img(src="imgs/pdf.svg")
+                                                p my-file.pdf
+                                            span.name Elzero
+                                        .widget__footer.widget__footer--file
+                                            span.date 20/06/2020
+                                            span.size 5.5MB
+                        
+                        // Files Statistics
+                        .files-stats
+                            h3 Files Statistics
+                            each file in files
+                                .file__details
+                                    div(class= `icon ${file.type.toLowerCase()}`)
+                                        i(class= file.icon)
+                                    .info
+                                        p= file.type + " Files"
+                                        span.num= file.number + " Files"
+                                    span.size= file.size
+                            a.btn.btn--primary.btn--upload
+                                i(class=" fa-solid fa-angles-up") 
+                                | Upload

@@ -1,0 +1,130 @@
+/* Files Page */
+
+.page__content {
+  display: flex;
+  gap: 20px;
+  @media (max-width: 991px) {
+    flex-direction: column-reverse;
+  }
+
+  /* Files */
+  .widgets--files {
+    flex: 1;
+    .widget--file {
+      .widget__content--file {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 10px;
+        > i {
+          color: $greyColor;
+        }
+        .file__info {
+          text-align: center;
+          margin-bottom: 10px;
+          img {
+            width: 60px;
+            margin-bottom: 10px;
+          }
+        }
+        span {
+          font-size: 12px;
+        }
+      }
+      .widget__footer--file {
+        @extend %center-between-flex;
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  $fileStats: (
+    pdf: (
+      rgb(0 117 255 / 20%),
+      $blueColor,
+    ),
+    images: (
+      rgb(34 197 94 / 20%),
+      $greenColor,
+    ),
+    word: (
+      rgb(244 67 54 / 20%),
+      $redColor,
+    ),
+    csv: (
+      rgb(245 158 11 / 20%),
+      $orangeColor,
+    ),
+  );
+
+  $filesTypes: map-keys($fileStats);
+
+  /* Files Statistics */
+  .files-stats {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    min-width: 300px;
+    height: fit-content;
+    > h3 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .file__details {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #eee;
+      padding: 20px;
+      margin-bottom: 10px;
+      .icon {
+        width: 40px;
+        height: 40px;
+        @extend %center-flex;
+      }
+
+      // Apply styles for each file type
+      @each $type in $filesTypes {
+        .icon.#{$type} {
+          background-color: nth(map-get($fileStats, $type), 1); // Alt color
+          i {
+            color: nth(map-get($fileStats, $type), 2); // Regular color
+          }
+        }
+      }
+
+      .info {
+        flex: 1;
+        p {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+        .num {
+          font-size: 12px;
+          color: $greyColor;
+        }
+      }
+      .size {
+        color: $greyColor;
+      }
+    }
+    .btn--upload {
+      text-transform: capitalize;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      font-weight: bold;
+      font-size: 16px;
+      i {
+        font-size: 13px;
+        margin-right: 10px;
+      }
+
+      &:hover i {
+        animation: up-down 0.3s alternate infinite;
+      }
+    }
+  }
+}

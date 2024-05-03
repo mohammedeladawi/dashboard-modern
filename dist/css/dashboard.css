@@ -69,12 +69,22 @@ button {
 
 /* End global rules */
 /* Last Project Progress */
+/* Last Project Progress In Dashboard Page */
 @keyframes hide-show {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+/* Upload Button In Files Page */
+@keyframes up-down {
+  from {
+    transform: translateY(-3px);
+  }
+  to {
+    transform: translateY(0px);
   }
 }
 .task:not(:first-child), .new:not(:first-child) {
@@ -91,13 +101,13 @@ button {
   }
 }
 
-.widgets--friends .widget--friend .widget__footer--friend, .widgets--courses .widget--course .widget__footer--course, .widgets--projects .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.page__content .widgets--files .widget--file .widget__footer--file, .widgets--friends .widget--friend .widget__footer--friend, .widgets--courses .widget--course .widget__footer--course, .widgets--projects .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.settings__widgets .servers__container .server, .settings__widgets .widget--social .input__container i, .widget--social .app .app__icon, .target--widget .target__content .content_details .progress__container .reached::before, .toggle__switch div::before {
+.page__content .files-stats .file__details .icon, .settings__widgets .servers__container .server, .settings__widgets .widget--social .input__container i, .widget--social .app .app__icon, .target--widget .target__content .content_details .progress__container .reached::before, .toggle__switch div::before {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,6 +240,11 @@ button {
 .widgets {
   display: grid;
   gap: 10px;
+}
+@media (min-width: 768px) {
+  .widgets-200 {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }
 @media (min-width: 768px) {
   .widgets-300 {
@@ -1381,4 +1396,120 @@ button {
 }
 .widgets--friends .widget--friend .widget__footer--friend .btn--rejected:hover {
   background-color: #dd3b30;
+}
+
+/* Files Page */
+.page__content {
+  display: flex;
+  gap: 20px;
+  /* Files */
+  /* Files Statistics */
+}
+@media (max-width: 991px) {
+  .page__content {
+    flex-direction: column-reverse;
+  }
+}
+.page__content .widgets--files {
+  flex: 1;
+}
+.page__content .widgets--files .widget--file .widget__content--file {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+.page__content .widgets--files .widget--file .widget__content--file > i {
+  color: #888;
+}
+.page__content .widgets--files .widget--file .widget__content--file .file__info {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.page__content .widgets--files .widget--file .widget__content--file .file__info img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.page__content .widgets--files .widget--file .widget__content--file span {
+  font-size: 12px;
+}
+.page__content .widgets--files .widget--file .widget__footer--file span {
+  font-size: 12px;
+}
+.page__content .files-stats {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  min-width: 300px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.page__content .files-stats > h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.page__content .files-stats .file__details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #eee;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.page__content .files-stats .file__details .icon {
+  width: 40px;
+  height: 40px;
+}
+.page__content .files-stats .file__details .icon.pdf {
+  background-color: rgba(0, 117, 255, 0.2);
+}
+.page__content .files-stats .file__details .icon.pdf i {
+  color: #0075ff;
+}
+.page__content .files-stats .file__details .icon.images {
+  background-color: rgba(34, 197, 94, 0.2);
+}
+.page__content .files-stats .file__details .icon.images i {
+  color: #22c55e;
+}
+.page__content .files-stats .file__details .icon.word {
+  background-color: rgba(244, 67, 54, 0.2);
+}
+.page__content .files-stats .file__details .icon.word i {
+  color: #f44336;
+}
+.page__content .files-stats .file__details .icon.csv {
+  background-color: rgba(245, 158, 11, 0.2);
+}
+.page__content .files-stats .file__details .icon.csv i {
+  color: #f59e0b;
+}
+.page__content .files-stats .file__details .info {
+  flex: 1;
+}
+.page__content .files-stats .file__details .info p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.page__content .files-stats .file__details .info .num {
+  font-size: 12px;
+  color: #888;
+}
+.page__content .files-stats .file__details .size {
+  color: #888;
+}
+.page__content .files-stats .btn--upload {
+  text-transform: capitalize;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: bold;
+  font-size: 16px;
+}
+.page__content .files-stats .btn--upload i {
+  font-size: 13px;
+  margin-right: 10px;
+}
+.page__content .files-stats .btn--upload:hover i {
+  animation: up-down 0.3s alternate infinite;
 }
