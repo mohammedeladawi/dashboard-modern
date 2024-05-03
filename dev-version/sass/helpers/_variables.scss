@@ -70,7 +70,7 @@ $appColors: (
   ),
 );
 
-/* Files Statistics */
+// Files Statistics
 $fileStats: (
   pdf: (
     rgb(0 117 255 / 20%),
@@ -88,4 +88,11 @@ $fileStats: (
     rgb(245 158 11 / 20%),
     $orangeColor,
   ),
+);
+
+// Plans
+$plans: (
+  free: $greenColor,
+  basic: $blueColor,
+  premium: $orangeColor,
 );

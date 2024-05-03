@@ -14,3 +14,25 @@ html(lang="en")
                 include layouts/header.pug
                 .main__content 
                     include layouts/content-title.pug
+                    //- Render plan details
+                    .widgets.widgets-450.widgets--plans
+                        each plan in plans
+                            div(class=`widget widget--plan ${plan.membership.toLowerCase()}`)
+                                .plan__price
+                                    h3.membership= plan.membership
+                                    span.money
+                                        span.dollar $
+                                        | #{plan.price}
+                                ul.plan__features
+                                    each item in plan.items
+                                        li.feature
+                                            span.detail
+                                                i.mark.fa-solid(class=`fa-${item.includes("xmark") ? 'xmark' : 'check'}`).fa-fw
+                                                span.info= item.replace(/\[xmark\]/g, "")
+                        
+                                            i.help.fa-solid.fa-circle-info
+                                .plan__subscribe
+                                    if plan.membership === "Premium"
+                                        p This is Your Current Plan
+                                    else 
+                                        button.btn Join

@@ -1,0 +1,77 @@
+/* Plans Page */
+.widgets--plans {
+  .widget--plan {
+    span {
+      color: #000;
+    }
+    .plan__price {
+      padding: 20px;
+      text-align: center;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+      .membership {
+        font-size: 25px;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+      .money {
+        position: relative;
+        font-size: 40px;
+        color: #fff;
+        .dollar {
+          font-size: 20px;
+          color: #fff;
+          position: absolute;
+          left: -15px;
+          top: 0;
+        }
+      }
+    }
+    .plan__features {
+      margin-bottom: 15px;
+      .feature {
+        @extend %center-between-flex;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+        .detail {
+          .mark {
+            margin-right: 5px;
+            font-size: 16px;
+            &.fa-xmark {
+              color: $redColor;
+            }
+            &.fa-check {
+              color: $greenColor;
+            }
+          }
+        }
+        .help {
+          color: $greyColor;
+          cursor: pointer;
+        }
+      }
+    }
+    .plan__subscribe {
+      text-align: center;
+      p {
+        color: $greyColor;
+      }
+      button {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@each $membership, $color in $plans {
+  .#{$membership} {
+    .plan__price {
+      background-color: $color;
+      outline: 3px solid $color;
+    }
+
+    button {
+      background-color: $color;
+    }
+  }
+}

@@ -1,4 +1,3 @@
-/* Files Statistics */
 /* Start global rules */
 body {
   font-family: "Open Sans", sans-serif;
@@ -102,7 +101,7 @@ button {
   }
 }
 
-.page__content .widgets--files .widget--file .widget__footer--file, .widgets--friends .widget--friend .widget__footer--friend, .widgets--courses .widget--course .widget__footer--course, .widgets--projects .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
+.widgets--plans .widget--plan .plan__features .feature, .page__content .widgets--files .widget--file .widget__footer--file, .widgets--friends .widget--friend .widget__footer--friend, .widgets--courses .widget--course .widget__footer--course, .widgets--projects .widget--person .widget__footer--person, .widget--profile, .settings__widgets .servers__container, .settings__widgets .widget--security .widget__content--security > div, .settings__widgets .widget--general .disabled__box, .settings__widgets .widget--control .control__box, .widget--post .widget__footer--post, .widget--upload .upload, .task {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1513,4 +1512,86 @@ button {
 }
 .page__content .files-stats .btn--upload:hover i {
   animation: up-down 0.3s alternate infinite;
+}
+
+/* Plans Page */
+.widgets--plans .widget--plan span {
+  color: #000;
+}
+.widgets--plans .widget--plan .plan__price {
+  padding: 20px;
+  text-align: center;
+  border: 3px solid #fff;
+  margin-bottom: 20px;
+}
+.widgets--plans .widget--plan .plan__price .membership {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.widgets--plans .widget--plan .plan__price .money {
+  position: relative;
+  font-size: 40px;
+  color: #fff;
+}
+.widgets--plans .widget--plan .plan__price .money .dollar {
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  left: -15px;
+  top: 0;
+}
+.widgets--plans .widget--plan .plan__features {
+  margin-bottom: 15px;
+}
+.widgets--plans .widget--plan .plan__features .feature {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.widgets--plans .widget--plan .plan__features .feature .detail .mark {
+  margin-right: 5px;
+  font-size: 16px;
+}
+.widgets--plans .widget--plan .plan__features .feature .detail .mark.fa-xmark {
+  color: #f44336;
+}
+.widgets--plans .widget--plan .plan__features .feature .detail .mark.fa-check {
+  color: #22c55e;
+}
+.widgets--plans .widget--plan .plan__features .feature .help {
+  color: #888;
+  cursor: pointer;
+}
+.widgets--plans .widget--plan .plan__subscribe {
+  text-align: center;
+}
+.widgets--plans .widget--plan .plan__subscribe p {
+  color: #888;
+}
+.widgets--plans .widget--plan .plan__subscribe button {
+  color: #fff;
+}
+
+.free .plan__price {
+  background-color: #22c55e;
+  outline: 3px solid #22c55e;
+}
+.free button {
+  background-color: #22c55e;
+}
+
+.basic .plan__price {
+  background-color: #0075ff;
+  outline: 3px solid #0075ff;
+}
+.basic button {
+  background-color: #0075ff;
+}
+
+.premium .plan__price {
+  background-color: #f59e0b;
+  outline: 3px solid #f59e0b;
+}
+.premium button {
+  background-color: #f59e0b;
 }
